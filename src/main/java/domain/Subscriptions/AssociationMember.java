@@ -1,9 +1,7 @@
 package domain.Subscriptions;
 
-import dataBase.IDbHandler;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;
-import domain.SystemManagment;
 
 import java.util.ArrayList;
 import java.util.Scanner;

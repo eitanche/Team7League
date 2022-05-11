@@ -1,8 +1,6 @@
 package services.useCases;
 
 
-import dataBase.IDbHandler;
-
 public class UC3LoginProcedure {
 
     private IDbHandler userDb;
