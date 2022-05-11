@@ -1,15 +1,17 @@
 package services.useCases;
 
+import dataBase.IDbHandler;
+import dataBase.Loaders.AssociationMemberLoader;
 import domain.Subscriptions.AssociationMember;
+import domain.Subscriptions.Subscription;
 
 public class UC2GameScheduler {
 
-    private IDbHandler userDb;
+    private SubscriptionLoader loader;
     private AssociationMember am;
 
     public UC2GameScheduler(IDbHandler userDb) {
-        this.userDb = userDb;
-        am = new AssociationMember(); // need to create from the dbHandler
+        am = loader.readFromDB("associationmember"); // need to create from the dbHandler
     }
 
     public void GameScheduler(){

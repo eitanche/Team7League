@@ -1,14 +1,17 @@
 package domain.Subscriptions;
 
+import dataBase.IDbHandler;
+import dataBase.Loaders.LeagueLoader;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;
+import domain.SystemManagment;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AssociationMember extends Subscription {
 
-    private IDbHandler userDb;
+    private LeagueLoader leagueLoader;
     private League[] leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
     public AssociationMember(IDbHandler userDb, League[] leagues) {
