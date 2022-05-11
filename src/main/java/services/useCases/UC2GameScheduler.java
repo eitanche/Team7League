@@ -7,11 +7,10 @@ import domain.Subscriptions.Subscription;
 
 public class UC2GameScheduler {
 
-    private SubscriptionLoader loader;
     private AssociationMember am;
 
-    public UC2GameScheduler(IDbHandler userDb) {
-        am = loader.readFromDB("associationmember"); // need to create from the dbHandler
+    public UC2GameScheduler(AssociationMember am) {
+        this.am = am; // need to create from the dbHandler
     }
 
     public void GameScheduler(){

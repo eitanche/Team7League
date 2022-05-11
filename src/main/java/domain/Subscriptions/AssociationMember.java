@@ -11,33 +11,45 @@ import java.util.Scanner;
 
 public class AssociationMember extends Subscription {
 
+    private String name;
     private LeagueLoader leagueLoader;
-    private League[] leagues; // יש כמה ליגות פעילות בו-זמנית ?
+    private SeasonLoader seasonLoader;
 
-    public AssociationMember(IDbHandler userDb, League[] leagues) {
-        this.userDb = userDb;
+    private ArrayList<League> leagues; // יש כמה ליגות פעילות בו-זמנית ?
+
+    public AssociationMember(String name) {
+        this.name = name;
+        leagues = leagueLoader.getInstance().getLeagues();
+    }
+
+    public void setLeagues(ArrayList<League> leagues) {
         this.leagues = leagues;
     }
 
+    //UC2
     public void assignAutoSeasonMatches() {
 
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+        Season season = seasonLoader.getInstance().getSeason(choosedLeague.getSeasonsIds()[0]);
+        choosedLeague.setCurrentSeason(season);
         choosedLeague.getCurrentSeason().getGamePolicy().active();
+
+        // עצרנו כאן אחרי שסידרנו את הטוען ליגות והטוען עונות(שטוען את העונה הנוכחית)
 
     }
 
     private League chooseLeagueToAssignAutoSeasonMatches() {
 
         System.out.println("Please Choose League");
-        for (int i = 0; i <  leagues.length; i++) {
-            System.out.println(leagues[i]);
+        for (int i = 0; i <  leagues.size(); i++) {
+            System.out.println(leagues.get(i));
         }
         Scanner scanner = new Scanner(System.in);
         int inputLeague = scanner.nextInt();
 
-        return leagues[inputLeague];
+        return leagues.get(inputLeague);
     }
-
+    //UC1
     public void assignReferees() {
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
         Season choosedSeason =  chooseSeasonToAssignReferees(choosedLeague);
