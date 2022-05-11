@@ -1,7 +1,7 @@
-package services;
+package services.useCases;
 
 import dataBase.IDbHandler;
-import domain.AssociationMember;
+import domain.Subscriptions.AssociationMember;
 
 public class UC2GameScheduler {
 

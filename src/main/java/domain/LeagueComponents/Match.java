@@ -1,4 +1,4 @@
-package domain;
+package domain.LeagueComponents;
 
 public class Match {
 

@@ -1,12 +1,13 @@
-package services;
+package services.useCases;
 
 import dataBase.IDbHandler;
-import domain.AssociationMember;
+import domain.Subscriptions.AssociationMember;
 
 public class UC1RefereeRegistration {
 
     private IDbHandler iDbHandler;
     private AssociationMember am;
+
 
     public UC1RefereeRegistration(IDbHandler iDbHandler) {
         this.iDbHandler = iDbHandler;

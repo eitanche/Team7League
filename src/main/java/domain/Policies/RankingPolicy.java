@@ -1,4 +1,4 @@
-package domain;
+package domain.Policies;
 
 public class RankingPolicy extends Policy {
 }

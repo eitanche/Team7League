@@ -1,4 +1,4 @@
-package domain;
+package domain.Subscriptions;
 
 public class Referee extends Subscription {
 }

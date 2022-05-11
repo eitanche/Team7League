@@ -1,4 +1,4 @@
-package services;
+package services.useCases;
 
 
 import dataBase.IDbHandler;
@@ -11,8 +11,6 @@ public class UC3LoginProcedure {
         this.userDb = userdb;
     }
 
-
-
     public Boolean connect(String userName, String password){
         if (checkUserNameExist(userName)){
             String hashedPassword = makeHash(password);
@@ -22,7 +20,6 @@ public class UC3LoginProcedure {
             else{
                 return false;
             }
-
         }
         else
         {

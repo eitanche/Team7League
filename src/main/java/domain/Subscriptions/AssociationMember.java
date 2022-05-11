@@ -1,6 +1,9 @@
-package domain;
+package domain.Subscriptions;
 
 import dataBase.IDbHandler;
+import domain.LeagueComponents.League;
+import domain.LeagueComponents.Season;
+import domain.SystemManagment;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,9 +11,12 @@ import java.util.Scanner;
 public class AssociationMember extends Subscription {
 
     private IDbHandler userDb;
-    private SystemManagment sm;
     private League[] leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
+    public AssociationMember(IDbHandler userDb, League[] leagues) {
+        this.userDb = userDb;
+        this.leagues = leagues;
+    }
 
     public void assignAutoSeasonMatches() {
 

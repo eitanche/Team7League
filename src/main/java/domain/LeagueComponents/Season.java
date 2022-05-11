@@ -1,4 +1,7 @@
-package domain;
+package domain.LeagueComponents;
+
+import domain.Policies.GamePolicy;
+import domain.Subscriptions.Referee;
 
 import java.util.ArrayList;
 

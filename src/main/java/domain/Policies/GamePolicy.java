@@ -1,6 +1,9 @@
-package domain;
+package domain.Policies;
 
 import dataBase.IDbHandler;
+import domain.LeagueComponents.Match;
+import domain.LeagueComponents.Season;
+import domain.LeagueComponents.Team;
 
 import java.util.ArrayList;
 
