@@ -13,10 +13,11 @@ public class AssociationMember extends Subscription {
 
     private LeagueLoader leagueLoader;
     private League[] leagues; // יש כמה ליגות פעילות בו-זמנית ?
+    private String name;
 
-    public AssociationMember(IDbHandler userDb, League[] leagues) {
-        this.userDb = userDb;
-        this.leagues = leagues;
+    public AssociationMember(String name) {
+        this.name = name;
+
     }
 
     public void assignAutoSeasonMatches() {

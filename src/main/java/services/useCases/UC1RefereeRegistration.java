@@ -1,14 +1,15 @@
 package services.useCases;
 
+import dataBase.Loaders.ILoader;
 import domain.Subscriptions.AssociationMember;
 
 public class UC1RefereeRegistration {
 
-    private IDbHandler iDbHandler;
+    private ILoader iDbHandler;
     private AssociationMember am;
 
 
-    public UC1RefereeRegistration(IDbHandler iDbHandler) {
+    public UC1RefereeRegistration(ILoader iDbHandler) {
         this.iDbHandler = iDbHandler;
         this.am = new AssociationMember(); // need to create from the dbHandler
     }
