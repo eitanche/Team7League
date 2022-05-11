@@ -21,4 +21,9 @@ public class UC1RefereeRegistration {
 
     }
 
+    private boolean checkConditions() {
+        return true;
+    }
+
+
 }
