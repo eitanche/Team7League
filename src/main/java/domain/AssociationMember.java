@@ -1,9 +1,12 @@
 package domain;
 
+import dataBase.IDbHandler;
+
 import java.util.Scanner;
 
 public class AssociationMember extends Subscription {
 
+    private IDbHandler userDb;
     private SystemManagment sm;
     private League[] leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
@@ -12,6 +15,7 @@ public class AssociationMember extends Subscription {
 
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
         choosedLeague.getCurrentSeason().getGamePolicy().active();
+
     }
 
     private League chooseLeagueToAssignAutoSeasonMatches() {
@@ -24,5 +28,9 @@ public class AssociationMember extends Subscription {
         int inputLeague = scanner.nextInt();
 
         return leagues[inputLeague];
+    }
+
+    public void assignReferees() {
+        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
     }
 }
