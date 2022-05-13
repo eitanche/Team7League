@@ -25,7 +25,7 @@ public class UC2GameScheduler {
 
     private boolean checkConditions() {
         if(LeagueLoader.getInstance().getLeagues().isEmpty()) {
-            System.out.println("There Are No Referees In The System");
+            System.out.println("There Are No Leagues In The System");
             return false;
         }
 

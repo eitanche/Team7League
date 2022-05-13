@@ -42,4 +42,9 @@ public class League {
     public void setCurrentSeason(Season currentSeason) {
         this.currentSeason = currentSeason;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
