@@ -12,4 +12,11 @@ public abstract class Subscription {
     public String getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Subscription{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

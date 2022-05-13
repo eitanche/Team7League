@@ -27,8 +27,10 @@ public class UC3LoginProcedure {
 
         Subscription logedin_user = userDb.authenticate(userName, password);
         if (logedin_user == null) {
+            System.out.println("One Or More Details Are Wrong");
             return null;
         }
+        System.out.println("Connect Successfully");
         return logedin_user;
     }
 

@@ -17,6 +17,9 @@ public class GamePolicy extends Policy {
 
         ArrayList<Team> teams1 = this.season.getTeams();
 
+        for (int i = 0; i < teams1.size(); i++) {
+            System.out.println(teams1.get(i));
+        }
         for (int i = 0; i < teams1.size(); i++){
             for (int j = i+1 ; j < teams1.size(); j++){
                 matches.add(new Match(teams1.get(i),teams1.get(j), season));

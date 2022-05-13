@@ -28,4 +28,12 @@ public class Match {
     public Season getSeason() {
         return season;
     }
+
+    @Override
+    public String toString() {
+        return "Match{" +
+                "home=" + home +
+                ", away=" + away +
+                '}';
+    }
 }

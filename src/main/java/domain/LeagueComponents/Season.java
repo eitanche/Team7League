@@ -58,4 +58,11 @@ public class Season {
         //send to eitan matchs...
         MatchWriter.getInstance().registerMatches(matchs);
     }
+
+    @Override
+    public String toString() {
+        return "Season{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

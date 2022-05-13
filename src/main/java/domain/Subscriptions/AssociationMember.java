@@ -14,28 +14,25 @@ import java.util.Scanner;
 
 public class AssociationMember extends Subscription {
 
-    private ArrayList<League> leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
     public AssociationMember(String id, String name) {
         super(id, name);
-        leagues = LeagueLoader.getInstance().getLeagues();
-    }
-
-    public void setLeagues(ArrayList<League> leagues) {
-        this.leagues = leagues;
     }
 
     //UC2
     public void assignAutoSeasonMatches() {
 
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-        Season season = SeasonLoader.getInstance().getSeason(choosedLeague.getCurrentSeason().getId());
-        choosedLeague.setCurrentSeason(season);
-        ArrayList<Match> matches = choosedLeague.getCurrentSeason().getGamePolicy().active();
-        choosedLeague.getCurrentSeason().setMatches(matches);
+        Season season = choosedLeague.getCurrentSeason();
+        ArrayList<Match> matches = season.getGamePolicy().active();
+        printMatches(matches);
+        season.setMatches(matches); // write in db
+    }
 
-        // עצרנו כאן אחרי שסידרנו את הטוען ליגות והטוען עונות(שטוען את העונה הנוכחית)
-
+    private void printMatches(ArrayList<Match> matches) {
+        for (int i = 0; i < matches.size(); i++){
+            System.out.println(matches.get(i));
+        }
     }
 
     private League chooseLeagueToAssignAutoSeasonMatches() {
