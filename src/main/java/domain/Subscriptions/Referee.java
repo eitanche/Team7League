@@ -1,8 +1,7 @@
 package domain.Subscriptions;
 
 public class Referee extends Subscription {
-    private String name;
-    public Referee(String name){
-        this.name=name;
+    public Referee(String id, String name){
+        super(id, name);
     }
 }

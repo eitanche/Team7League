@@ -1,27 +1,30 @@
 package domain.LeagueComponents;
 
+import dataBase.Loaders.SeasonLoader;
+
 import java.util.ArrayList;
 
 public class League {
 
     private String id;
     private String name;
-    private String[] seasonsIds;
     private Season currentSeason;
     private ArrayList<Season> seasons;
 
     public League(String id, String name, String[] seasonsIds) {
         this.id = id;
         this.name = name;
-        this.seasonsIds = seasonsIds;
+        this.seasons = new ArrayList<>();
+        for (String seasonID: seasonsIds) {
+            seasons.add(SeasonLoader.getInstance().getSeason(seasonID));
+        }
+        if (this.seasons.size()>0) {
+            currentSeason= this.seasons.get(0);
+        }
     }
 
     public String getName() {
         return name;
-    }
-
-    public String[] getSeasonsIds() {
-        return seasonsIds;
     }
 
     public void setSeasons(ArrayList<Season> seasons) {

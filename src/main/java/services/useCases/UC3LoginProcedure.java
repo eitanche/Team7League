@@ -2,7 +2,10 @@ package services.useCases;
 
 
 import dataBase.Loaders.ILoader;
+import dataBase.Loaders.SubscriptionLoader;
 import domain.Subscriptions.Subscription;
+
+import java.util.Scanner;
 
 public class UC3LoginProcedure {
 
@@ -12,36 +15,24 @@ public class UC3LoginProcedure {
         this.userDb = userdb;
     }
 
-    public boolean connect(String userName, String password){
-        if (checkUserNameExist(userName)){
-            String hashedPassword = makeHash(password);
-            if (isCorrect(userName,hashedPassword)){
-                return true;
-            }
-            else{
-                return false;
-            }
+    public Subscription connect() {
+        Scanner inpu = new Scanner(System.in);
+        String input;
+        System.out.println("Please Enter User-Name:\n");
+        input = inpu.nextLine();
+        String userName = input;
+        System.out.println("Please Enter Password:\n");
+        input = inpu.nextLine();
+        String password = input;
+
+        Subscription logedin_user = userDb.authenticate(userName, password);
+        if (logedin_user == null) {
+            return null;
         }
-        else
-        {
-            return false;
-        }
-
+        return logedin_user;
     }
 
-    private boolean isCorrect(String userName, String hashedPassword) {
-        return userDb.authenticate(userName,hashedPassword);
-    }
 
-    private boolean checkUserNameExist(String userName) {
-        return userDb.isUserExists(userName);
-    }
-
-    //need to add hash function
-    private String makeHash(String password){
-
-        return password;
-    }
 
 
 }

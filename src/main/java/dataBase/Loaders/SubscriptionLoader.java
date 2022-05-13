@@ -1,19 +1,20 @@
 package dataBase.Loaders;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import dataBase.ADatabaseHandler;
 import domain.Subscriptions.Subscription;
 import org.bson.Document;
 
-public class SubscriptionLoader implements ILoader{
-    private MongoCollection collection;
+public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
+    private static SubscriptionLoader instance=null;
 
-    public SubscriptionLoader() {
-        MongoClient client = MongoClients.create("mongodb://localhost:27017");
-        MongoDatabase database = client.getDatabase("Database");
-        collection = database.getCollection("Users");
+    private SubscriptionLoader() {
+        super();
+    }
+
+    public static SubscriptionLoader getInstance() {
+        if (instance==null)
+            instance = new SubscriptionLoader();
+        return instance;
     }
 
     @Override
@@ -21,17 +22,26 @@ public class SubscriptionLoader implements ILoader{
         Document desiredUserDocument = new Document();
         desiredUserDocument.put("userName", userName);
         desiredUserDocument.put("password", hashedPassword);
-        Document result = (Document) collection.find(desiredUserDocument).first();
+        Document result = database.getCollection("Users").find(desiredUserDocument).first();
         if (result == null)
             return null;
-        return SubscriptionFactory.getSubscriptionObject((String)result.get("name"), ((String[])result.get("role"))[0]);
+        return SubscriptionFactory.getSubscriptionObject((String)result.get("_id"), (String)result.get("name"), ((String[])result.get("role"))[0]);
     }
 
     @Override
     public boolean isUserExists(String userName) {
         Document desiredUserDocument = new Document();
         desiredUserDocument.put("userName", userName);
-        Document result = (Document) collection.find(desiredUserDocument).first();
+        Document result = database.getCollection("Users").find(desiredUserDocument).first();
         return result!=null;
+    }
+
+    public String getUserNameByID(String userID) {
+        Document desiredUserDocument = new Document();
+        desiredUserDocument.put("_id", userID);
+        Document result = database.getCollection("Users").find(desiredUserDocument).first();
+        if (result==null)
+            return null;
+        return (String) result.get("name");
     }
 }

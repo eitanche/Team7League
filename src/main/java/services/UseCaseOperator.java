@@ -19,43 +19,46 @@ public class UseCaseOperator {
         System.out.println("Use-Cases:");
         System.out.println("*Please select one option*");
         String input = "1";
-        AssociationMember am = null;
         String userName;
         String password;
 
         while(!input.equals("4")) {
             System.out.println("1. Use Case -1- Referee Registration\n2. Use Case -2- Game Scheduler\n3. Use Case -3- Login Procedure\n4. Exit\n");
             Scanner inpu = new Scanner(System.in);
-            System.out.println("Enter Your Choice:\n");
             input = inpu.nextLine();
             switch (input){
                 case "1":
-                    if (am==null){
+                    if (logedIn==null){
                         System.out.println("Please log-in to Association Member account first.");
                         break;
                     }
-                    UC1RefereeRegistration uc1 = new UC1RefereeRegistration(logedIn);
-                    uc1.RefereeRegistration();
+                    try{
+                        UC1RefereeRegistration uc1 = new UC1RefereeRegistration(logedIn);
+                        uc1.RefereeRegistration();
+                    }
+                    catch (Exception e){
+                        System.out.println("Your not Association Member account.");
+                        break;
+                    }
+
                     break;
                 case "2":
-                    if (am==null){
+                    if (logedIn==null){
                         System.out.println("Please log-in to Association Member account first.");
                         break;
                     }
-                    UC2GameScheduler uc2 = new UC2GameScheduler(subLoader);
-                    uc2.GameScheduler();
+                    try {
+                        UC2GameScheduler uc2 = new UC2GameScheduler(logedIn);
+                        uc2.GameScheduler();
+                    }
+                    catch (Exception e){
+                        System.out.println("Your not Association Member account.");
+                        break;
+                    }
                     break;
                 case "3":
-                    System.out.println("Please Enter User-Name:\n");
-                    input = inpu.nextLine();
-                    userName = input;
-                    System.out.println("Please Enter Password:\n");
-                    input = inpu.nextLine();
-                    password = input;
-                    subLoader =  new SubscriptionLoader();
-                    Subscription logedin_user = subLoader.authenticate(userName, password);
                     UC3LoginProcedure uc3 = new UC3LoginProcedure(subLoader);
-                    uc3.connect(userName, password);
+                    logedIn = uc3.connect();
                     break;
             }
         }
