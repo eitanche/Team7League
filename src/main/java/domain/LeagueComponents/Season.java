@@ -14,6 +14,11 @@ public class Season {
     private GamePolicy gamePolicy;
     private ArrayList<Team> teams;
     private ArrayList<Referee> referees;
+    private ArrayList<Match> matchs;
+
+    public String getId() {
+        return id;
+    }
 
     public Season(String id, String name, String[] teamIDs, String[] refereeIDs, String gamePolicyType) {
         this.id = id;
@@ -48,5 +53,11 @@ public class Season {
 
     public ArrayList<Referee> getReferees() {
         return referees;
+    }
+
+    public void setMatchs(ArrayList m){
+        matchs = m;
+        //send to eitan matchs...
+
     }
 }

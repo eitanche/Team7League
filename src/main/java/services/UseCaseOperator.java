@@ -7,6 +7,7 @@ import domain.Subscriptions.Subscription;
 import services.useCases.UC1RefereeRegistration;
 import services.useCases.UC2GameScheduler;
 import services.useCases.UC3LoginProcedure;
+import services.useCases.NotAssociationMemberException;
 
 import javax.swing.text.StyledEditorKit;
 import java.util.Scanner;
@@ -36,8 +37,7 @@ public class UseCaseOperator {
                         UC1RefereeRegistration uc1 = new UC1RefereeRegistration(logedIn);
                         uc1.RefereeRegistration();
                     }
-                    catch (Exception e){
-                        System.out.println("Your not Association Member account.");
+                    catch (NotAssociationMemberException e){
                         break;
                     }
 
@@ -51,8 +51,7 @@ public class UseCaseOperator {
                         UC2GameScheduler uc2 = new UC2GameScheduler(logedIn);
                         uc2.GameScheduler();
                     }
-                    catch (Exception e){
-                        System.out.println("Your not Association Member account.");
+                    catch (NotAssociationMemberException e){
                         break;
                     }
                     break;

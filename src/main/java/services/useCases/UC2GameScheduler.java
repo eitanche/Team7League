@@ -1,6 +1,6 @@
 package services.useCases;
 
-import dataBase.IDbHandler;
+import dataBase.Loaders.LeagueLoader;
 import domain.Subscriptions.AssociationMember;
 import domain.Subscriptions.Subscription;
 
@@ -18,13 +18,14 @@ public class UC2GameScheduler {
 
         if (!checkConditions())
             return;
-
-        am.assignAutoSeasonMatches(); // lahaz al shibuz mishakim
+        am.assignAutoSeasonMatches();
 
 
     }
 
     private boolean checkConditions() {
+        if(LeagueLoader.getInstance().getLeagues().isEmpty())
+            return false;
         return true;
     }
 }
