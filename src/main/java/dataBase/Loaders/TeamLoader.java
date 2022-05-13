@@ -1,9 +1,10 @@
 package dataBase.Loaders;
 
-import domain.LeagueComponents.Season;
+import dataBase.ADatabaseHandler;
+import domain.LeagueComponents.Team;
 import org.bson.Document;
 
-public class TeamLoader extends ADatabaseHandler{
+public class TeamLoader extends ADatabaseHandler {
     private static TeamLoader instance=null;
 
     private TeamLoader() {
@@ -22,7 +23,7 @@ public class TeamLoader extends ADatabaseHandler{
         desiredTeam = database.getCollection("Teams").find(desiredTeam).first();
         if (desiredTeam==null)
             return null;
-        return new Season((String)desiredTeam.get("_id"), (String)desiredTeam.get("name"), (String[])desiredTeam.get("teams"), (String[])desiredTeam.get("referees"), (String)desiredTeam.get("gamePolicy"));
+        return new Team((String)desiredTeam.get("_id"), (String)desiredTeam.get("name"));
     }
 
 }

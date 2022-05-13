@@ -2,8 +2,7 @@ package domain.Subscriptions;
 
 
 public class Player extends Subscription {
-    private String name;
-    public Player(String name){
-        this.name = name;
+    public Player(String id, String name){
+        super(id, name);
     }
 }

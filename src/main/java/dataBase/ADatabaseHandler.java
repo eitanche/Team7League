@@ -1,4 +1,4 @@
-package dataBase.Loaders;
+package dataBase;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;

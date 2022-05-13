@@ -44,7 +44,7 @@ public class DBInitiator {
     public void loadDBFromJsonFile(String jsonFileName) throws IOException {
         String collectionName = jsonFileName.substring(0, jsonFileName.indexOf('.'));
         MongoCollection<Document> collection = database.getCollection(collectionName);
-
+        collection.deleteMany(new Document());
         //drop previous import
         collection.drop();
 

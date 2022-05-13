@@ -11,13 +11,10 @@ import java.util.Scanner;
 
 public class AssociationMember extends Subscription {
 
-    private String name;
-    private SeasonLoader seasonLoader;
-
     private ArrayList<League> leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
-    public AssociationMember(String name) {
-        this.name = name;
+    public AssociationMember(String id, String name) {
+        super(id, name);
         leagues = LeagueLoader.getInstance().getLeagues();
     }
 

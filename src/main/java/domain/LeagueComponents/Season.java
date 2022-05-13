@@ -1,5 +1,6 @@
 package domain.LeagueComponents;
 
+import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.TeamLoader;
 import domain.Policies.GamePolicy;
 import domain.Subscriptions.Referee;
@@ -23,7 +24,7 @@ public class Season {
         }
         this.referees = new ArrayList<>();
         for (String refereeID: refereeIDs) {
-            this.teams.add(RefereeLoader.getInstance().getReferee(refereeID));
+            this.referees.add(RefereeLoader.getInstance().getReferee(refereeID));
         }
         if (gamePolicyType.equals("regular"))
             gamePolicy = new GamePolicy();
@@ -35,6 +36,10 @@ public class Season {
 
     public GamePolicy getGamePolicy() {
         return gamePolicy;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setGamePolicy(GamePolicy gamePolicy) {

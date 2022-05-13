@@ -1,11 +1,10 @@
 package dataBase.Loaders;
 
+import dataBase.ADatabaseHandler;
 import domain.LeagueComponents.Season;
 import org.bson.Document;
 
-import java.util.ArrayList;
-
-public class SeasonLoader extends ADatabaseHandler{
+public class SeasonLoader extends ADatabaseHandler {
     private static SeasonLoader instance=null;
 
     private SeasonLoader() {

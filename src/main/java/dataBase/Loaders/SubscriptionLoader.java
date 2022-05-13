@@ -1,13 +1,22 @@
 package dataBase.Loaders;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import dataBase.ADatabaseHandler;
 import domain.Subscriptions.Subscription;
 import org.bson.Document;
 
 public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
+    private static SubscriptionLoader instance=null;
+
+    private SubscriptionLoader() {
+        super();
+    }
+
+    public static SubscriptionLoader getInstance() {
+        if (instance==null)
+            instance = new SubscriptionLoader();
+        return instance;
+    }
+
     @Override
     public Subscription authenticate(String userName, String hashedPassword) {
         Document desiredUserDocument = new Document();
@@ -16,7 +25,7 @@ public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
         Document result = database.getCollection("Users").find(desiredUserDocument).first();
         if (result == null)
             return null;
-        return SubscriptionFactory.getSubscriptionObject((String)result.get("name"), ((String[])result.get("role"))[0]);
+        return SubscriptionFactory.getSubscriptionObject((String)result.get("_id"), (String)result.get("name"), ((String[])result.get("role"))[0]);
     }
 
     @Override
@@ -25,5 +34,14 @@ public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
         desiredUserDocument.put("userName", userName);
         Document result = database.getCollection("Users").find(desiredUserDocument).first();
         return result!=null;
+    }
+
+    public String getUserNameByID(String userID) {
+        Document desiredUserDocument = new Document();
+        desiredUserDocument.put("_id", userID);
+        Document result = database.getCollection("Users").find(desiredUserDocument).first();
+        if (result==null)
+            return null;
+        return (String) result.get("name");
     }
 }
