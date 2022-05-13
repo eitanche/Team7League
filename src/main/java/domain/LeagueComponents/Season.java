@@ -16,10 +16,6 @@ public class Season {
     private ArrayList<Referee> referees;
     private ArrayList<Match> matchs;
 
-    public String getId() {
-        return id;
-    }
-
     public Season(String id, String name, String[] teamIDs, String[] refereeIDs, String gamePolicyType) {
         this.id = id;
         this.name = name;
@@ -58,6 +54,6 @@ public class Season {
     public void setMatchs(ArrayList m){
         matchs = m;
         //send to eitan matchs...
-
+        MatchWriter.getInstance().registerMatches(matchs);
     }
 }

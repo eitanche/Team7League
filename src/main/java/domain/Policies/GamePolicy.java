@@ -15,11 +15,11 @@ public class GamePolicy extends Policy {
 
     public ArrayList<Match> active() {
 
-        Team[] teams1 = this.season.getTeams();
+        ArrayList<Team> teams1 = this.season.getTeams();
 
-        for (int i = 0; i < teams1.length; i++){
-            for (int j = i+1 ; j < teams1.length; j++){
-                matches.add(new Match(teams1[i],teams1[j], season));
+        for (int i = 0; i < teams1.size(); i++){
+            for (int j = i+1 ; j < teams1.size(); j++){
+                matches.add(new Match(teams1.get(i),teams1.get(j), season));
             }
         }
         return matches;
