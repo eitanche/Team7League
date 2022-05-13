@@ -34,7 +34,7 @@ public class UseCaseOperator {
                         System.out.println("Please log-in to Association Member account first.");
                         break;
                     }
-                    UC1RefereeRegistration uc1 = new UC1RefereeRegistration(subLoader);
+                    UC1RefereeRegistration uc1 = new UC1RefereeRegistration(logedIn);
                     uc1.RefereeRegistration();
                     break;
                 case "2":

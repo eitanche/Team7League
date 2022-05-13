@@ -14,10 +14,12 @@ public class AssociationMember extends Subscription {
     private String name;
     private SeasonLoader seasonLoader;
 
+    // not need
     private ArrayList<League> leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
     public AssociationMember(String name) {
         this.name = name;
+        // not need
         leagues = LeagueLoader.getInstance().getLeagues();
     }
 
@@ -39,23 +41,39 @@ public class AssociationMember extends Subscription {
 
     private League chooseLeagueToAssignAutoSeasonMatches() {
 
+        ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
+
         System.out.println("Please Choose League");
         for (int i = 0; i <  leagues.size(); i++) {
-            System.out.println(leagues.get(i));
+            System.out.println((i+1) + ". " + leagues.get(i));
         }
         Scanner scanner = new Scanner(System.in);
         int inputLeague = scanner.nextInt();
 
-        return leagues.get(inputLeague);
+        return leagues.get(inputLeague - 1);
     }
     //UC1
     public void assignReferees() {
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
         Season choosedSeason =  chooseSeasonToAssignReferees(choosedLeague);
-        Referee choosedReferee = chooseRefereeToAssign(choosedSeason);
 
-        // insert the referee as choosedSeason's referee in the database
+        Referee choosedReferee = chooseRefereeToAssign();
+        //TODO : insert the referee as choosedSeason's referee in the database
+        RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
 
+        System.out.println("Click 1 to assign more referee to the season\nClick 2 to exit");
+        Scanner scanner = new Scanner(System.in);
+        int result = scanner.nextInt();
+        while (result == 1){
+            choosedReferee = chooseRefereeToAssign();
+            // TODO : insert the referee as choosedSeason's referee in the database
+            RefereeWriter.getInstance().writeRefereeToSeason(choosedReferee, choosedSeason);
+
+            System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
+            result = scanner.nextInt();
+        }
+
+        System.out.println("The Use Case Finished");
     }
 
     private Season chooseSeasonToAssignReferees(League league) {
@@ -64,26 +82,26 @@ public class AssociationMember extends Subscription {
 
         System.out.println("Please Choose Season To Assign Referees");
         for (int i = 0; i <  seasons.size(); i++) {
-            System.out.println(seasons.get(i));
+            System.out.println((i+1) + ". " + seasons.get(i));
         }
         Scanner scanner = new Scanner(System.in);
         int inputSeason = scanner.nextInt();
 
-        return seasons.get(inputSeason);
+        return seasons.get(inputSeason - 1);
     }
 
-    private Referee chooseRefereeToAssign(Season season) {
+    private Referee chooseRefereeToAssign() {
 
-        ArrayList<Referee> referees =  season.getReferees();
+        ArrayList<Referee> referees =  RefereeLoader.getInstance().getAllReferees();
 
         System.out.println("Please Choose Referee To Assign");
         for (int i = 0; i <  referees.size(); i++) {
-            System.out.println(referees.get(i));
+            System.out.println((i+1) + ". " +referees.get(i));
         }
         Scanner scanner = new Scanner(System.in);
         int inputReferee = scanner.nextInt();
 
-        return referees.get(inputReferee);
+        return referees.get(inputReferee - 1);
     }
 
 }
