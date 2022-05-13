@@ -1,7 +1,9 @@
 package domain.Subscriptions;
 
 import dataBase.Loaders.LeagueLoader;
+import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.SeasonLoader;
+import dataBase.Writers.RefereeWriter;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;
 import domain.SystemManagment;
@@ -26,7 +28,7 @@ public class AssociationMember extends Subscription {
     public void assignAutoSeasonMatches() {
 
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-        Season season = SeasonLoader.getInstance().getSeason(choosedLeague.getSeasonsIds()[0]);
+        Season season = SeasonLoader.getInstance().getSeason(choosedLeague.getCurrentSeason().getId());
         choosedLeague.setCurrentSeason(season);
         choosedLeague.getCurrentSeason().getGamePolicy().active();
 
@@ -62,7 +64,7 @@ public class AssociationMember extends Subscription {
         while (result == 1){
             choosedReferee = chooseRefereeToAssign();
             // TODO : insert the referee as choosedSeason's referee in the database
-            RefereeWriter.getInstance().writeRefereeToSeason(choosedReferee, choosedSeason);
+            RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
 
             System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
             result = scanner.nextInt();
