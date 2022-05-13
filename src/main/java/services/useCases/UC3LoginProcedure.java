@@ -1,11 +1,13 @@
 package services.useCases;
 
 
+import dataBase.Loaders.ILoader;
+
 public class UC3LoginProcedure {
 
-    private IDbHandler userDb;
+    private ILoader userDb;
 
-    public UC3LoginProcedure(IDbHandler userdb) {
+    public UC3LoginProcedure(ILoader userdb) {
         this.userDb = userdb;
     }
 
