@@ -1,6 +1,5 @@
 package domain.Subscriptions;
 
-import dataBase.IDbHandler;
 import dataBase.Loaders.LeagueLoader;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;

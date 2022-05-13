@@ -5,7 +5,7 @@ import domain.Subscriptions.*;
 import java.util.Locale;
 
 public class SubscriptionFactory {
-    public Subscription getSubscriptionObject(String name, String role){
+    public static Subscription getSubscriptionObject(String name, String role){
         if ((role.toLowerCase(Locale.ENGLISH)).equals("associationmember")) {
             return new AssociationMember(name);
         }
