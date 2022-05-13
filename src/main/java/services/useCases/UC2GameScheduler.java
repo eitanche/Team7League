@@ -26,6 +26,7 @@ public class UC2GameScheduler {
     private boolean checkConditions() {
         if(LeagueLoader.getInstance().getLeagues().isEmpty())
             return false;
+
         return true;
     }
 }
