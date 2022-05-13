@@ -19,35 +19,6 @@ public class AssociationMember extends Subscription {
         super(id, name);
     }
 
-    //UC2
-    public void assignAutoSeasonMatches() {
-
-        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-        Season season = choosedLeague.getCurrentSeason();
-        ArrayList<Match> matches = season.getGamePolicy().active();
-        printMatches(matches);
-        season.setMatches(matches); // write in db
-    }
-
-    private void printMatches(ArrayList<Match> matches) {
-        for (int i = 0; i < matches.size(); i++){
-            System.out.println(matches.get(i));
-        }
-    }
-
-    private League chooseLeagueToAssignAutoSeasonMatches() {
-
-        ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
-
-        System.out.println("Please Choose League");
-        for (int i = 0; i <  leagues.size(); i++) {
-            System.out.println((i+1) + ". " + leagues.get(i));
-        }
-        Scanner scanner = new Scanner(System.in);
-        int inputLeague = scanner.nextInt();
-
-        return leagues.get(inputLeague - 1);
-    }
     //UC1
     public void assignReferees() {
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
