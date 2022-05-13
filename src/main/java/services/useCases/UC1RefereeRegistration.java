@@ -11,7 +11,7 @@ public class UC1RefereeRegistration {
 
     public UC1RefereeRegistration(ILoader iDbHandler) {
         this.iDbHandler = iDbHandler;
-        this.am = new AssociationMember(); // need to create from the dbHandler
+        this.am = ; // need to create from the dbHandler
     }
 
     public void RefereeRegistration(){

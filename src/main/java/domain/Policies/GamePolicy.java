@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class GamePolicy extends Policy {
 
-    private IDbHandler userDb;
     private Season season;
     private int numberOfTeams;
     private ArrayList<Match> matches;

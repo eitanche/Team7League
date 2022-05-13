@@ -12,13 +12,13 @@ public class LeagueLoader extends ADatabaseHandler {
         super();
     }
 
-    public LeagueLoader getInstance() {
+    public static LeagueLoader getInstance() {
         if (instance==null)
             instance = new LeagueLoader();
         return instance;
     }
 
-    private ArrayList<League> getLeagues() {
+    public ArrayList<League> getLeagues() {
         ArrayList<League> allLeagues = new ArrayList<>();
         for (Document leagueDocument: database.getCollection("Leagues").find(new Document())) {
             allLeagues.add(new League((String)leagueDocument.get("_id"), (String)leagueDocument.get("name"), (String[])leagueDocument.get("seasons")));

@@ -2,6 +2,7 @@ package services.useCases;
 
 
 import dataBase.Loaders.ILoader;
+import domain.Subscriptions.Subscription;
 
 public class UC3LoginProcedure {
 
@@ -11,7 +12,7 @@ public class UC3LoginProcedure {
         this.userDb = userdb;
     }
 
-    public Boolean connect(String userName, String password){
+    public boolean connect(String userName, String password){
         if (checkUserNameExist(userName)){
             String hashedPassword = makeHash(password);
             if (isCorrect(userName,hashedPassword)){

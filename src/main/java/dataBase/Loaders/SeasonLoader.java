@@ -13,13 +13,13 @@ public class SeasonLoader extends ADatabaseHandler{
         super();
     }
 
-    public SeasonLoader getInstance() {
+    public static SeasonLoader getInstance() {
         if (instance==null)
             instance = new SeasonLoader();
         return instance;
     }
 
-    private Season getSeason(String seasonID) {
+    public Season getSeason(String seasonID) {
         Document desiredSeason = new Document();
         desiredSeason.put("_id", seasonID);
         for (Document leagueDocument: database.getCollection("Seasons").find(desiredSeason)) {

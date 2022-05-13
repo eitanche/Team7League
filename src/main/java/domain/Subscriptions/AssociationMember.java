@@ -1,6 +1,7 @@
 package domain.Subscriptions;
 
 import dataBase.Loaders.LeagueLoader;
+import dataBase.Loaders.SeasonLoader;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;
 import domain.SystemManagment;
@@ -11,14 +12,13 @@ import java.util.Scanner;
 public class AssociationMember extends Subscription {
 
     private String name;
-    private LeagueLoader leagueLoader;
     private SeasonLoader seasonLoader;
 
     private ArrayList<League> leagues; // יש כמה ליגות פעילות בו-זמנית ?
 
     public AssociationMember(String name) {
         this.name = name;
-        leagues = leagueLoader.getInstance().getLeagues();
+        leagues = LeagueLoader.getInstance().getLeagues();
     }
 
     public void setLeagues(ArrayList<League> leagues) {
@@ -29,7 +29,7 @@ public class AssociationMember extends Subscription {
     public void assignAutoSeasonMatches() {
 
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-        Season season = seasonLoader.getInstance().getSeason(choosedLeague.getSeasonsIds()[0]);
+        Season season = SeasonLoader.getInstance().getSeason(choosedLeague.getSeasonsIds()[0]);
         choosedLeague.setCurrentSeason(season);
         choosedLeague.getCurrentSeason().getGamePolicy().active();
 

@@ -3,6 +3,7 @@ package services;
 import dataBase.Loaders.ILoader;
 import dataBase.Loaders.SubscriptionLoader;
 import domain.Subscriptions.AssociationMember;
+import domain.Subscriptions.Subscription;
 import services.useCases.UC1RefereeRegistration;
 import services.useCases.UC2GameScheduler;
 import services.useCases.UC3LoginProcedure;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 
 public class UseCaseOperator {
     private static SubscriptionLoader subLoader;
+    private static Subscription logedIn = null;
 
     public static void main(String[] args) {
         System.out.println("Use-Cases:");
@@ -50,8 +52,8 @@ public class UseCaseOperator {
                     System.out.println("Please Enter Password:\n");
                     input = inpu.nextLine();
                     password = input;
-                    SubscriptionLoader subLoader =  new SubscriptionLoader();
-                    subLoader.authenticate(userName, password);
+                    subLoader =  new SubscriptionLoader();
+                    Subscription logedin_user = subLoader.authenticate(userName, password);
                     UC3LoginProcedure uc3 = new UC3LoginProcedure(subLoader);
                     uc3.connect(userName, password);
                     break;
