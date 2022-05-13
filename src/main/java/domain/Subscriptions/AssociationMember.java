@@ -5,6 +5,7 @@ import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.SeasonLoader;
 import dataBase.Writers.RefereeWriter;
 import domain.LeagueComponents.League;
+import domain.LeagueComponents.Match;
 import domain.LeagueComponents.Season;
 import domain.SystemManagment;
 
@@ -30,7 +31,7 @@ public class AssociationMember extends Subscription {
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
         Season season = SeasonLoader.getInstance().getSeason(choosedLeague.getCurrentSeason().getId());
         choosedLeague.setCurrentSeason(season);
-        ArrayList matchs = choosedLeague.getCurrentSeason().getGamePolicy().active();
+        ArrayList<Match> matchs = choosedLeague.getCurrentSeason().getGamePolicy().active();
         choosedLeague.getCurrentSeason().setMatchs(matchs);
 
         // עצרנו כאן אחרי שסידרנו את הטוען ליגות והטוען עונות(שטוען את העונה הנוכחית)
@@ -58,7 +59,7 @@ public class AssociationMember extends Subscription {
         Referee choosedReferee = chooseRefereeToAssign();
         //TODO : insert the referee as choosedSeason's referee in the database
         RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
-
+        choosedReferee.setSeason(choosedSeason);
         System.out.println("Click 1 to assign more referee to the season\nClick 2 to exit");
         Scanner scanner = new Scanner(System.in);
         int result = scanner.nextInt();
@@ -66,6 +67,7 @@ public class AssociationMember extends Subscription {
             choosedReferee = chooseRefereeToAssign();
             // TODO : insert the referee as choosedSeason's referee in the database
             RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
+            choosedReferee.setSeason(choosedSeason);
 
             System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
             result = scanner.nextInt();

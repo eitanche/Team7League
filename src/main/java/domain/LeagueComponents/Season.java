@@ -16,6 +16,7 @@ public class Season {
     private ArrayList<Referee> referees;
     private ArrayList<Match> matchs;
 
+
     public Season(String id, String name, String[] teamIDs, String[] refereeIDs, String gamePolicyType) {
         this.id = id;
         this.name = name;
