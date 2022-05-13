@@ -1,6 +1,5 @@
 package dataBase.Loaders;
 
-import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;
 import org.bson.Document;
 
@@ -22,9 +21,9 @@ public class SeasonLoader extends ADatabaseHandler{
     public Season getSeason(String seasonID) {
         Document desiredSeason = new Document();
         desiredSeason.put("_id", seasonID);
-        for (Document leagueDocument: database.getCollection("Seasons").find(desiredSeason)) {
-            allSeasons.add(new League((String)leagueDocument.get("name"), (String[])leagueDocument.get("seasons")));
-        }
-        return allSeasons;
+        desiredSeason = database.getCollection("Seasons").find(desiredSeason).first();
+        if (desiredSeason==null)
+            return null;
+        return new Season((String)desiredSeason.get("_id"), (String)desiredSeason.get("name"), (String[])desiredSeason.get("teams"), (String[])desiredSeason.get("referees"), (String)desiredSeason.get("gamePolicy"));
     }
 }
