@@ -2,6 +2,7 @@ package services.useCases;
 
 import dataBase.Loaders.ILoader;
 import dataBase.Loaders.LeagueLoader;
+import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.SeasonLoader;
 import domain.LeagueComponents.League;
 import domain.Subscriptions.AssociationMember;
@@ -14,11 +15,11 @@ public class UC1RefereeRegistration {
 
     private AssociationMember am;
 
-    public UC1RefereeRegistration(Subscription am) {
+    public UC1RefereeRegistration(Subscription am) throws NotAssociationMemberException {
         if (am instanceof AssociationMember)
             this.am = (AssociationMember)am;
         else
-            throw new NotAssociasionMember();
+            throw new NotAssociationMemberException();
     }
 
     public void RefereeRegistration() {
