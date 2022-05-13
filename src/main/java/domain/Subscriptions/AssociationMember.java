@@ -31,8 +31,8 @@ public class AssociationMember extends Subscription {
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
         Season season = SeasonLoader.getInstance().getSeason(choosedLeague.getCurrentSeason().getId());
         choosedLeague.setCurrentSeason(season);
-        ArrayList<Match> matchs = choosedLeague.getCurrentSeason().getGamePolicy().active();
-        choosedLeague.getCurrentSeason().setMatchs(matchs);
+        ArrayList<Match> matches = choosedLeague.getCurrentSeason().getGamePolicy().active();
+        choosedLeague.getCurrentSeason().setMatches(matches);
 
         // עצרנו כאן אחרי שסידרנו את הטוען ליגות והטוען עונות(שטוען את העונה הנוכחית)
 

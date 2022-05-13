@@ -53,7 +53,7 @@ public class Season {
         return referees;
     }
 
-    public void setMatchs(ArrayList m){
+    public void setMatches(ArrayList m){
         matchs = m;
         //send to eitan matchs...
         MatchWriter.getInstance().registerMatches(matchs);
