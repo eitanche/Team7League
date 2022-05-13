@@ -3,6 +3,7 @@ package domain.Policies;
 import domain.LeagueComponents.Match;
 import domain.LeagueComponents.Season;
 import domain.LeagueComponents.Team;
+import services.useCases.InvalidNumberOfTeamsException;
 
 import java.util.ArrayList;
 
@@ -12,10 +13,15 @@ public class GamePolicy extends Policy {
     private int numberOfTeams;
     private ArrayList<Match> matches;
 
+    public GamePolicy() {
+        numberOfTeams=10;
+    }
 
-    public ArrayList<Match> active() {
+    public ArrayList<Match> active() throws InvalidNumberOfTeamsException {
 
         ArrayList<Team> teams1 = this.season.getTeams();
+        if (teams1.size()!=10)
+            throw new InvalidNumberOfTeamsException(numberOfTeams, teams1.size());
 
         for (int i = 0; i < teams1.size(); i++) {
             System.out.println(teams1.get(i));
