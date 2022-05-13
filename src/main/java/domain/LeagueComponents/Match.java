@@ -12,4 +12,20 @@ public class Match {
         this.away = away;
         this.id = home.getId() +"_"+ away.getId() +"_"+ s.getId();
     }
+
+    public Team getHomeTeam() {
+        return home;
+    }
+
+    public Team getAwayTeam() {
+        return away;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Season getSeason() {
+        return season;
+    }
 }

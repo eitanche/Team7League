@@ -25,13 +25,13 @@ public class RefereeLoader extends ADatabaseHandler {
         desiredReferee = database.getCollection("Referees").find(desiredReferee).first();
         if (desiredReferee==null)
             return null;
-        return new Referee(SubscriptionLoader.getInstance().getUserNameByID((String) desiredReferee.get("user_id")));
+        return new Referee((String)desiredReferee.get("_id") ,SubscriptionLoader.getInstance().getUserNameByID((String) desiredReferee.get("_id")));
     }
 
     public ArrayList<Referee> getAllReferees() {
         ArrayList<Referee> allReferees = new ArrayList<>();
         for (Document refereeDoc: database.getCollection("Referees").find(new Document())) {
-            allReferees.add(new Referee(SubscriptionLoader.getInstance().getUserNameByID((String) refereeDoc.get("_id"))));
+            allReferees.add(new Referee((String)refereeDoc.get("_id"), SubscriptionLoader.getInstance().getUserNameByID((String) refereeDoc.get("_id"))));
         }
         return allReferees;
     }
