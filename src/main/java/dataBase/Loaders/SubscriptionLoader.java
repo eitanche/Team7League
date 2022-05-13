@@ -4,6 +4,8 @@ import dataBase.ADatabaseHandler;
 import domain.Subscriptions.Subscription;
 import org.bson.Document;
 
+import java.util.ArrayList;
+
 public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
     private static SubscriptionLoader instance=null;
 
@@ -25,7 +27,7 @@ public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
         Document result = database.getCollection("Users").find(desiredUserDocument).first();
         if (result == null)
             return null;
-        return SubscriptionFactory.getSubscriptionObject((String)result.get("_id"), (String)result.get("name"), ((String[])result.get("role"))[0]);
+        return SubscriptionFactory.getSubscriptionObject((String)result.get("_id"), (String)result.get("name"), (String) ((ArrayList)result.get("roles")).get(0));
     }
 
     @Override

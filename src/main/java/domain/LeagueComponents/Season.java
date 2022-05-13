@@ -18,7 +18,7 @@ public class Season {
     private ArrayList<Match> matchs;
 
 
-    public Season(String id, String name, String[] teamIDs, String[] refereeIDs, String gamePolicyType) {
+    public Season(String id, String name, ArrayList<String> teamIDs, ArrayList<String> refereeIDs, String gamePolicyType) {
         this.id = id;
         this.name = name;
         this.teams = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Season {
             this.referees.add(RefereeLoader.getInstance().getReferee(refereeID));
         }
         if (gamePolicyType.equals("regular"))
-            gamePolicy = new GamePolicy();
+            gamePolicy = new GamePolicy(this);
     }
 
     public ArrayList<Team> getTeams() {

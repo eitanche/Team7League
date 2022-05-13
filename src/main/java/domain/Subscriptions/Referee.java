@@ -10,6 +10,7 @@ public class Referee extends Subscription {
 
     public Referee(String id, String name){
         super(id, name);
+        season = new ArrayList<>();
     }
 
     public void setSeason(Season season) {

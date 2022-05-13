@@ -4,6 +4,8 @@ import dataBase.ADatabaseHandler;
 import domain.LeagueComponents.Season;
 import org.bson.Document;
 
+import java.util.ArrayList;
+
 public class SeasonLoader extends ADatabaseHandler {
     private static SeasonLoader instance=null;
 
@@ -23,6 +25,6 @@ public class SeasonLoader extends ADatabaseHandler {
         desiredSeason = database.getCollection("Seasons").find(desiredSeason).first();
         if (desiredSeason==null)
             return null;
-        return new Season((String)desiredSeason.get("_id"), (String)desiredSeason.get("name"), (String[])desiredSeason.get("teams"), (String[])desiredSeason.get("referees"), (String)desiredSeason.get("gamePolicy"));
+        return new Season((String)desiredSeason.get("_id"), (String)desiredSeason.get("name"), (ArrayList)desiredSeason.get("teams"), (ArrayList)desiredSeason.get("referees"), (String)desiredSeason.get("gamePolicy"));
     }
 }

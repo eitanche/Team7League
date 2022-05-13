@@ -8,6 +8,7 @@ public class Match {
     private Season season;
 
     public Match(Team home, Team away, Season s) {
+        this.season = s;
         this.home = home;
         this.away = away;
         this.id = home.getId() +"_"+ away.getId() +"_"+ s.getId();
@@ -32,8 +33,8 @@ public class Match {
     @Override
     public String toString() {
         return "Match{" +
-                "home=" + home +
-                ", away=" + away +
-                '}';
+                "home=" + home.toString() +
+                ", away=" + away.toString() +
+                ", season="+ season.toString() +"}";
     }
 }

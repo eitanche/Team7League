@@ -11,4 +11,8 @@ public class Team {
     public String getId() {
         return id;
     }
+
+    public String toString() {
+        return "Team name: "+this.name;
+    }
 }

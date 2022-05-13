@@ -24,13 +24,13 @@ public class RefereeWriter extends ADatabaseHandler {
     }
 
     public void addRefereeToSeason(Season season, Referee referee) {
-        MongoCollection<Document> seasonCollection = database.getCollection("seasons");
+        MongoCollection<Document> seasonCollection = database.getCollection("Seasons");
         Document desiredSeason = new Document();
         desiredSeason.put("_id", season.getId());
         desiredSeason = seasonCollection.findOneAndDelete(desiredSeason);
-        List<String> refereeList = Arrays.asList((String[])desiredSeason.get("referees"));
+        List<String> refereeList = (List<String>) desiredSeason.remove("referees");;
         refereeList.add(referee.getId());
-        desiredSeason.put("referees", refereeList.toArray());
+        desiredSeason.put("referees", refereeList);
         seasonCollection.insertOne(desiredSeason);
 
     }

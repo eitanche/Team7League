@@ -11,7 +11,7 @@ public class League {
     private Season currentSeason;
     private ArrayList<Season> seasons;
 
-    public League(String id, String name, String[] seasonsIds) {
+    public League(String id, String name, ArrayList<String> seasonsIds) {
         this.id = id;
         this.name = name;
         this.seasons = new ArrayList<>();

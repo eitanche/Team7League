@@ -13,12 +13,13 @@ public class GamePolicy extends Policy {
     private int numberOfTeams;
     private ArrayList<Match> matches;
 
-    public GamePolicy() {
+    public GamePolicy(Season season) {
         numberOfTeams=10;
+        this.season = season;
     }
 
     public ArrayList<Match> active() throws InvalidNumberOfTeamsException {
-
+        this.matches = new ArrayList<>();
         ArrayList<Team> teams1 = this.season.getTeams();
         if (teams1.size()!=10)
             throw new InvalidNumberOfTeamsException(numberOfTeams, teams1.size());

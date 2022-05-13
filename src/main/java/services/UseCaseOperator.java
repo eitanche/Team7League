@@ -1,18 +1,22 @@
 package services;
 
+import dataBase.DBInitiator;
 import dataBase.Loaders.SubscriptionLoader;
 import domain.Subscriptions.Subscription;
 import services.useCases.UC1RefereeRegistration;
 import services.useCases.UC2GameScheduler;
 import services.useCases.UC3LoginProcedure;
 import services.useCases.NotAssociationMemberException;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UseCaseOperator {
 
     private static Subscription logedIn = null;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        DBInitiator.main(args);
         System.out.println("Use-Cases:");
         System.out.println("*Please select one option*");
         String input = "1";

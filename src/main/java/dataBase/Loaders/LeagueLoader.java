@@ -22,7 +22,7 @@ public class LeagueLoader extends ADatabaseHandler {
     public ArrayList<League> getLeagues() {
         ArrayList<League> allLeagues = new ArrayList<>();
         for (Document leagueDocument: database.getCollection("Leagues").find(new Document())) {
-            allLeagues.add(new League((String)leagueDocument.get("_id"), (String)leagueDocument.get("name"), (String[])leagueDocument.get("seasons")));
+            allLeagues.add(new League((String)leagueDocument.get("_id"), (String)leagueDocument.get("name"), (ArrayList)leagueDocument.get("seasons")));
         }
         return allLeagues;
     }
