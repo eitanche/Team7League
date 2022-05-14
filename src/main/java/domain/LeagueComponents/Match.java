@@ -1,5 +1,7 @@
 package domain.LeagueComponents;
 
+import java.util.Objects;
+
 public class Match {
 
     private Team home;
@@ -37,4 +39,13 @@ public class Match {
                 ", away=" + away.toString() +
                 ", season="+ season.toString() +"}";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Match)) return false;
+        Match match = (Match) o;
+        return Objects.equals(home, match.home) && Objects.equals(away, match.away) && Objects.equals(season, match.season);
+    }
+
 }

@@ -7,6 +7,7 @@ import domain.Policies.GamePolicy;
 import domain.Subscriptions.Referee;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Season {
 
@@ -15,7 +16,7 @@ public class Season {
     private GamePolicy gamePolicy;
     private ArrayList<Team> teams;
     private ArrayList<Referee> referees;
-    private ArrayList<Match> matchs;
+    private ArrayList<Match> matches;
 
 
     public Season(String id, String name, ArrayList<String> teamIDs, ArrayList<String> refereeIDs, String gamePolicyType) {
@@ -45,6 +46,10 @@ public class Season {
         return id;
     }
 
+    public ArrayList<Match> getMatches() {
+        return matches;
+    }
+
     public void setGamePolicy(GamePolicy gamePolicy) {
         this.gamePolicy = gamePolicy;
     }
@@ -54,9 +59,9 @@ public class Season {
     }
 
     public void setMatches(ArrayList m){
-        matchs = m;
+        matches = m;
         //send to eitan matchs...
-        MatchWriter.getInstance().registerMatches(matchs);
+        MatchWriter.getInstance().registerMatches(matches);
     }
 
     @Override
@@ -64,5 +69,18 @@ public class Season {
         return "Season{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Season)) return false;
+        Season season = (Season) o;
+        return Objects.equals(name, season.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

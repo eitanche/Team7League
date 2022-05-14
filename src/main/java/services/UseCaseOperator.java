@@ -16,7 +16,7 @@ public class UseCaseOperator {
     private static Subscription logedIn = null;
 
     public static void main(String[] args) throws IOException {
-        DBInitiator.main(args);
+        DBInitiator.initiateDB();
         System.out.println("Use-Cases:");
         System.out.println("*Please select one option*");
         String input = "1";

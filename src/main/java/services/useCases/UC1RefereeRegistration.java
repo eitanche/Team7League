@@ -29,7 +29,6 @@ public class UC1RefereeRegistration {
         if (!checkConditions())
             return;
 
-//        am.assignReferees(); // lahaz al rishum shoftim
         League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
         Season choosedSeason =  chooseSeasonToAssignReferees(choosedLeague);
 

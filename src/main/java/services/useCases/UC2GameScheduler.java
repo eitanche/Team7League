@@ -24,14 +24,15 @@ public class UC2GameScheduler {
         if (!checkConditions())
             return;
         try {
-            assignAutoSeasonMatches();
+            League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+            assignAutoSeasonMatches(choosedLeague);
         }
-        catch (InvalidNumberOfTeamsException e) {
+        catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    private boolean checkConditions() {
+    public boolean checkConditions() {
         if(LeagueLoader.getInstance().getLeagues().isEmpty()) {
             System.out.println("There Are No Leagues In The System");
             return false;
@@ -39,16 +40,20 @@ public class UC2GameScheduler {
         return true;
     }
 
-    private void assignAutoSeasonMatches() throws InvalidNumberOfTeamsException {
-        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+    public void assignAutoSeasonMatches(League choosedLeague) throws InvalidNumberOfTeamsException {
+
         Season season = choosedLeague.getCurrentSeason();
         ArrayList<Match> matches = season.getGamePolicy().active();
         printMatches(matches);
-        season.setMatches(matches); // write in db
+        season.setMatches(matches); // write in db and in the attribute class
     }
 
-    private League chooseLeagueToAssignAutoSeasonMatches() {
+    public League chooseLeagueToAssignAutoSeasonMatches() {
+
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
+        if (leagues == null)
+            throw new NullPointerException();
+
         System.out.println("Please Choose League");
         for (int i = 0; i <  leagues.size(); i++) {
             System.out.println((i+1) + ". " + leagues.get(i));
@@ -58,7 +63,8 @@ public class UC2GameScheduler {
         return leagues.get(inputLeague - 1);
     }
 
-    private void printMatches(ArrayList<Match> matches) {
+
+    public void printMatches(ArrayList<Match> matches) {
         for (int i = 0; i < matches.size(); i++){
             System.out.println(matches.get(i));
         }
