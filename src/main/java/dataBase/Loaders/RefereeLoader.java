@@ -19,9 +19,9 @@ public class RefereeLoader extends ADatabaseHandler {
         return instance;
     }
 
-    public Referee getReferee(String teamID) {
+    public Referee getReferee(String refereeID) {
         Document desiredReferee = new Document();
-        desiredReferee.put("_id", teamID);
+        desiredReferee.put("_id", refereeID);
         desiredReferee = database.getCollection("Referees").find(desiredReferee).first();
         if (desiredReferee==null)
             return null;

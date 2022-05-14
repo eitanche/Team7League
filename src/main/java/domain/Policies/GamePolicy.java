@@ -6,6 +6,7 @@ import domain.LeagueComponents.Team;
 import services.useCases.InvalidNumberOfTeamsException;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class GamePolicy extends Policy {
 
@@ -33,5 +34,18 @@ public class GamePolicy extends Policy {
             }
         }
         return matches;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GamePolicy that = (GamePolicy) o;
+        return numberOfTeams == that.numberOfTeams;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOfTeams);
     }
 }

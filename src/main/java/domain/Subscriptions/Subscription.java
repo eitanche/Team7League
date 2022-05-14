@@ -13,10 +13,19 @@ public abstract class Subscription {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Subscription{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return ((Subscription)obj).id.equals(this.id) && ((Subscription)obj).name.equals(this.name) && this.getClass().isInstance(obj) ;
     }
 }

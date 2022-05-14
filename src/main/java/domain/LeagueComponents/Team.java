@@ -1,5 +1,7 @@
 package domain.LeagueComponents;
 
+import java.util.Objects;
+
 public class Team {
     private String id;
     private String name;
@@ -14,5 +16,18 @@ public class Team {
 
     public String toString() {
         return "Team name: "+this.name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Team team = (Team) o;
+        return id.equals(team.id) && name.equals(team.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }

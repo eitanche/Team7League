@@ -28,6 +28,9 @@ public class DBInitiator {
     private MongoDatabase database;
 
     public DBInitiator() {
+        LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
+        Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
+        rootLogger.setLevel(Level.OFF);
         MongoClient client = MongoClients.create("mongodb://localhost:27017");
         database = client.getDatabase("Database");
     }
@@ -82,16 +85,8 @@ public class DBInitiator {
         }
     }
 
-    public void printDBDocuments(String collectionName) {
-        for (Document d: database.getCollection(collectionName).find())
-            System.out.println(d.toJson());
-    }
-
-    public static void main(String[] args) throws IOException {
+    public static void initiateDB() throws IOException {
         DBInitiator db = new DBInitiator();
-        LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
-        Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
-        rootLogger.setLevel(Level.OFF);
         db.addAllJsonsToDB();
     }
 }

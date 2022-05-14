@@ -7,6 +7,7 @@ import domain.Policies.GamePolicy;
 import domain.Subscriptions.Referee;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Season {
 
@@ -17,6 +18,19 @@ public class Season {
     private ArrayList<Referee> referees;
     private ArrayList<Match> matchs;
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Season season = (Season) o;
+        return id.equals(season.id) && name.equals(season.name) && gamePolicy.equals(season.gamePolicy) && teams.equals(season.teams) && referees.equals(season.referees) && matchs.equals(season.matchs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, gamePolicy, teams, referees, matchs);
+    }
 
     public Season(String id, String name, ArrayList<String> teamIDs, ArrayList<String> refereeIDs, String gamePolicyType) {
         this.id = id;
@@ -31,6 +45,7 @@ public class Season {
         }
         if (gamePolicyType.equals("regular"))
             gamePolicy = new GamePolicy(this);
+        this.matchs = new ArrayList<>();
     }
 
     public ArrayList<Team> getTeams() {
