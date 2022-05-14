@@ -24,7 +24,9 @@ public class UC3LoginProcedure {
         System.out.println("Please Enter Password:\n");
         input = inpu.nextLine();
         String password = input;
-
+        return activeConnect(userName, password);
+    }
+    public Subscription activeConnect(String userName, String password){
         Subscription logedin_user = userDb.authenticate(userName, password);
         if (logedin_user == null) {
             System.out.println("One Or More Details Are Wrong");
@@ -33,8 +35,4 @@ public class UC3LoginProcedure {
         System.out.println("Connect Successfully");
         return logedin_user;
     }
-
-
-
-
 }

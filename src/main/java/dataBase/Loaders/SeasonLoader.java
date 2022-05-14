@@ -27,4 +27,5 @@ public class SeasonLoader extends ADatabaseHandler {
             return null;
         return new Season((String)desiredSeason.get("_id"), (String)desiredSeason.get("name"), (ArrayList)desiredSeason.get("teams"), (ArrayList)desiredSeason.get("referees"), (String)desiredSeason.get("gamePolicy"));
     }
+
 }
