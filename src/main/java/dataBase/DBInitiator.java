@@ -1,5 +1,8 @@
 package dataBase;
 
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.LoggerContext;
 import com.mongodb.bulk.BulkWriteResult;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -8,6 +11,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.BulkWriteOptions;
 import com.mongodb.client.model.InsertOneModel;
 import org.bson.Document;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -85,7 +89,9 @@ public class DBInitiator {
 
     public static void main(String[] args) throws IOException {
         DBInitiator db = new DBInitiator();
+        LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
+        Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
+        rootLogger.setLevel(Level.OFF);
         db.addAllJsonsToDB();
-        db.printDBDocuments("Users");
     }
 }
