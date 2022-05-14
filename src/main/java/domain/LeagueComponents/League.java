@@ -3,6 +3,7 @@ package domain.LeagueComponents;
 import dataBase.Loaders.SeasonLoader;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class League {
 
@@ -46,5 +47,18 @@ public class League {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        League league = (League) o;
+        return id.equals(league.id) && name.equals(league.name) && currentSeason.equals(league.currentSeason) && seasons.equals(league.seasons);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, currentSeason, seasons);
     }
 }
