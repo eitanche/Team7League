@@ -28,46 +28,57 @@ public class UC1RefereeRegistration {
     public void RefereeRegistration() {
         if (!checkConditions())
             return;
+        try{
+            League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+            Season choosedSeason = chooseSeasonToAssignReferees(choosedLeague);
+            Referee choosedReferee = chooseRefereeToAssign();
 
-        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-        Season choosedSeason =  chooseSeasonToAssignReferees(choosedLeague);
+            assignRefereeToSeason(choosedSeason, choosedReferee);
 
-        Referee choosedReferee = chooseRefereeToAssign();
-        RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
-        choosedReferee.setSeason(choosedSeason);
-        System.out.println("Click 1 to assign more referee to the season\nClick 2 to exit");
-        Scanner scanner = new Scanner(System.in);
-        int result = scanner.nextInt();
-        while (result == 1){
-            choosedReferee = chooseRefereeToAssign();
-            RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
-            choosedReferee.setSeason(choosedSeason);
-
-            System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
-            result = scanner.nextInt();
+            System.out.println("Click 1 to assign more referee to the season\nClick 2 to exit");
+            Scanner scanner = new Scanner(System.in);
+            int result = scanner.nextInt();
+            while (result == 1){
+                choosedReferee = chooseRefereeToAssign();
+                assignRefereeToSeason(choosedSeason, choosedReferee);
+                System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
+                result = scanner.nextInt();
+            }
         }
-
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return;
+        }
         System.out.println("The Use Case Finished");
-
     }
 
-    private Referee chooseRefereeToAssign() {
-        ArrayList<Referee> referees =  RefereeLoader.getInstance().getAllReferees();
+    public void assignRefereeToSeason(Season choosedSeason, Referee choosedReferee) {
+        RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
+        choosedReferee.setSeason(choosedSeason);
+        choosedSeason.getReferees().add(choosedReferee);
+    }
 
+    public Referee chooseRefereeToAssign() {
+        ArrayList<Referee> referees =  RefereeLoader.getInstance().getAllReferees();
+        if (referees==null)
+            throw new NullPointerException();
+        return referees.get(activeChooseRefereeToAssign(referees));
+    }
+    public int activeChooseRefereeToAssign(ArrayList<Referee> refList){
         System.out.println("Please Choose Referee To Assign");
-        for (int i = 0; i <  referees.size(); i++) {
-            System.out.println((i+1) + ". " +referees.get(i));
+        for (int i = 0; i <  refList.size(); i++) {
+            System.out.println((i+1) + ". " +refList.get(i));
         }
         Scanner scanner = new Scanner(System.in);
         int inputReferee = scanner.nextInt();
-
-        return referees.get(inputReferee - 1);
+        return inputReferee-1;
     }
 
     private League chooseLeagueToAssignAutoSeasonMatches() {
 
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
-
+        if (leagues==null)
+            throw new NullPointerException();
         System.out.println("Please Choose League");
         for (int i = 0; i <  leagues.size(); i++) {
             System.out.println((i+1) + ". " + leagues.get(i));
@@ -82,7 +93,8 @@ public class UC1RefereeRegistration {
     private Season chooseSeasonToAssignReferees(League league) {
 
         ArrayList<Season> seasons =  league.getSeasons();
-
+        if (seasons==null)
+            throw new NullPointerException();
         System.out.println("Please Choose Season To Assign Referees");
         for (int i = 0; i <  seasons.size(); i++) {
             System.out.println((i+1) + ". " + seasons.get(i));

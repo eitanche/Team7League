@@ -16,4 +16,10 @@ public class Referee extends Subscription {
     public void setSeason(Season season) {
         this.season.add(season);
     }
+
+    public ArrayList<Season> getSeason() {
+        return season;
+    }
+
+
 }
