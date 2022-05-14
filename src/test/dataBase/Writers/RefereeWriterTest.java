@@ -1,14 +1,11 @@
 package dataBase.Writers;
 import dataBase.DBInitiator;
-import dataBase.Exceptions.SeasonNotExistsException;
-import dataBase.Loaders.LeagueLoader;
+import Exceptions.SeasonNotExistsException;
 import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.SeasonLoader;
-import domain.LeagueComponents.League;
 import domain.LeagueComponents.Season;
 import domain.Subscriptions.Referee;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -16,7 +13,6 @@ import org.junit.rules.ExpectedException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.*;
 

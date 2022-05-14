@@ -1,5 +1,7 @@
 package services.useCases;
 
+import Exceptions.InvalidNumberOfTeamsException;
+import Exceptions.NotAssociationMemberException;
 import dataBase.Loaders.LeagueLoader;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Match;
@@ -20,16 +22,11 @@ public class UC2GameScheduler {
         am = (AssociationMember) loggedInUser;
     }
 
-    public void GameScheduler(){
+    public void GameScheduler() throws InvalidNumberOfTeamsException {
         if (!checkConditions())
             return;
-        try {
-            League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-            assignAutoSeasonMatches(choosedLeague);
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+        assignAutoSeasonMatches(choosedLeague);
     }
 
     public boolean checkConditions() {

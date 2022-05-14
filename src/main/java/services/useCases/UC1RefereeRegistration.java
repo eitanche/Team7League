@@ -1,6 +1,7 @@
 package services.useCases;
 
-import dataBase.Loaders.ILoader;
+import Exceptions.NotAssociationMemberException;
+import Exceptions.SeasonNotExistsException;
 import dataBase.Loaders.LeagueLoader;
 import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.SeasonLoader;
@@ -25,34 +26,29 @@ public class UC1RefereeRegistration {
             throw new NotAssociationMemberException();
     }
 
-    public void RefereeRegistration() {
+    public void RefereeRegistration() throws SeasonNotExistsException {
         if (!checkConditions())
             return;
-        try{
-            League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
-            Season choosedSeason = chooseSeasonToAssignReferees(choosedLeague);
-            Referee choosedReferee = chooseRefereeToAssign();
 
+        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+        Season choosedSeason = chooseSeasonToAssignReferees(choosedLeague);
+        Referee choosedReferee = chooseRefereeToAssign();
+
+        assignRefereeToSeason(choosedSeason, choosedReferee);
+
+        System.out.println("Click 1 to assign more referee to the season\nClick 2 to exit");
+        Scanner scanner = new Scanner(System.in);
+        int result = scanner.nextInt();
+        while (result == 1){
+            choosedReferee = chooseRefereeToAssign();
             assignRefereeToSeason(choosedSeason, choosedReferee);
-
-            System.out.println("Click 1 to assign more referee to the season\nClick 2 to exit");
-            Scanner scanner = new Scanner(System.in);
-            int result = scanner.nextInt();
-            while (result == 1){
-                choosedReferee = chooseRefereeToAssign();
-                assignRefereeToSeason(choosedSeason, choosedReferee);
-                System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
-                result = scanner.nextInt();
-            }
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-            return;
+            System.out.println("Click 1 for assign more referee to the season\nClick 2 for exit");
+            result = scanner.nextInt();
         }
         System.out.println("The Use Case Finished");
     }
 
-    public void assignRefereeToSeason(Season choosedSeason, Referee choosedReferee) {
+    public void assignRefereeToSeason(Season choosedSeason, Referee choosedReferee) throws SeasonNotExistsException {
         RefereeWriter.getInstance().addRefereeToSeason(choosedSeason, choosedReferee);
         choosedReferee.setSeason(choosedSeason);
         choosedSeason.getReferees().add(choosedReferee);

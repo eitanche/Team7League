@@ -3,7 +3,7 @@ package domain.Policies;
 import domain.LeagueComponents.Match;
 import domain.LeagueComponents.Season;
 import domain.LeagueComponents.Team;
-import services.useCases.InvalidNumberOfTeamsException;
+import Exceptions.InvalidNumberOfTeamsException;
 
 import java.util.ArrayList;
 import java.util.Objects;

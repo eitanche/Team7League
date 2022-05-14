@@ -1,12 +1,13 @@
+package services;
+
 import dataBase.DBInitiator;
 import dataBase.Loaders.ILoader;
 import dataBase.Loaders.SubscriptionLoader;
 import domain.Subscriptions.AssociationMember;
-import domain.Subscriptions.Subscription;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import services.useCases.NotAssociationMemberException;
+import Exceptions.NotAssociationMemberException;
 import services.useCases.UC3LoginProcedure;
 
 import java.io.IOException;

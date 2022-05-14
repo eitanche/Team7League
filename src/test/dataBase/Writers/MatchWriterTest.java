@@ -7,19 +7,13 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import dataBase.DBInitiator;
-import dataBase.Exceptions.SeasonNotExistsException;
-import dataBase.Loaders.LeagueLoader;
-import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.SeasonLoader;
 import dataBase.Loaders.TeamLoader;
-import domain.LeagueComponents.League;
 import domain.LeagueComponents.Match;
 import domain.LeagueComponents.Season;
 import domain.LeagueComponents.Team;
-import domain.Subscriptions.Referee;
 import org.bson.Document;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -27,8 +21,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class MatchWriterTest {

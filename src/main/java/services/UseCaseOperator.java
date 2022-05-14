@@ -1,12 +1,13 @@
 package services;
 
+import Exceptions.LeagueManagementException;
 import dataBase.DBInitiator;
 import dataBase.Loaders.SubscriptionLoader;
 import domain.Subscriptions.Subscription;
 import services.useCases.UC1RefereeRegistration;
 import services.useCases.UC2GameScheduler;
 import services.useCases.UC3LoginProcedure;
-import services.useCases.NotAssociationMemberException;
+import Exceptions.NotAssociationMemberException;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -35,7 +36,7 @@ public class UseCaseOperator {
                         UC1RefereeRegistration uc1 = new UC1RefereeRegistration(logedIn);
                         uc1.RefereeRegistration();
                     }
-                    catch (NotAssociationMemberException e){
+                    catch (LeagueManagementException e){
                         System.out.println(e.getMessage());
                         break;
                     }
@@ -50,7 +51,7 @@ public class UseCaseOperator {
                         UC2GameScheduler uc2 = new UC2GameScheduler(logedIn);
                         uc2.GameScheduler();
                     }
-                    catch (NotAssociationMemberException e){
+                    catch (LeagueManagementException e){
                         System.out.println(e.getMessage());
                         break;
                     }

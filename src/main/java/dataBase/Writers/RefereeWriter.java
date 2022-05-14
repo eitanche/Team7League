@@ -2,13 +2,11 @@ package dataBase.Writers;
 
 import com.mongodb.client.MongoCollection;
 import dataBase.ADatabaseHandler;
-import dataBase.Exceptions.SeasonNotExistsException;
+import Exceptions.SeasonNotExistsException;
 import domain.LeagueComponents.Season;
 import domain.Subscriptions.Referee;
 import org.bson.Document;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class RefereeWriter extends ADatabaseHandler {

@@ -1,3 +1,6 @@
+package services;
+
+import Exceptions.SeasonNotExistsException;
 import dataBase.DBInitiator;
 import dataBase.Loaders.ILoader;
 import dataBase.Loaders.SubscriptionLoader;
@@ -7,7 +10,7 @@ import domain.Subscriptions.Referee;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import services.useCases.NotAssociationMemberException;
+import Exceptions.NotAssociationMemberException;
 import services.useCases.UC1RefereeRegistration;
 
 import java.io.IOException;
@@ -24,7 +27,7 @@ public class UC1RefereeRegistrationTest {
         DBInitiator.initiateDB();
     }
     @Test
-    public void assignRefereeToSeasonTest(){
+    public void assignRefereeToSeasonTest() throws SeasonNotExistsException {
         ArrayList<String> teamsId = new ArrayList<String>();
         for (int i=0; i<10; i++){
             teamsId.add(Integer.toString(i));

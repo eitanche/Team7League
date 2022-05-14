@@ -1,3 +1,5 @@
+package services;
+
 import dataBase.DBInitiator;
 import dataBase.Loaders.LeagueLoader;
 import dataBase.Loaders.SubscriptionLoader;
@@ -7,8 +9,8 @@ import domain.Subscriptions.AssociationMember;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import services.useCases.InvalidNumberOfTeamsException;
-import services.useCases.NotAssociationMemberException;
+import Exceptions.InvalidNumberOfTeamsException;
+import Exceptions.NotAssociationMemberException;
 import services.useCases.UC2GameScheduler;
 
 import java.io.IOException;
@@ -63,10 +65,9 @@ public class UC2GameSchedulerTest {
 
     }
 
+    @Test
     public void checkEmptyLeague(){
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
-        Assert.assertNull(leagues.get(4));
+        Assert.assertEquals(2, leagues.size());
     }
-
-
 }
