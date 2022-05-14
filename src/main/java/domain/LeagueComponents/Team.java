@@ -1,5 +1,7 @@
 package domain.LeagueComponents;
 
+import java.util.Objects;
+
 public class Team {
     private String id;
     private String name;
