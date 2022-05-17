@@ -26,20 +26,21 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
+                <version>0.8.7</version>
                 <executions>
-                    <!-- prepare agent for measuring unit tests -->
                     <execution>
-                        <id>prepare-unit-tests</id>
+                        <id>jacoco-initialize</id>
+                        <phase>initialize</phase>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
-                        <configuration>
-                            <append>true</append>
-                            <destFile>${sonar.jacoco.reportPath}</destFile>
-                            <!-- Sets the VM argument line used when unit tests are run. -->
-                            <propertyName>surefireArgLine</propertyName>
-                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -47,13 +48,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.12.0</version>
+                <configuration>
+<!--                    <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{argLine}</argLine>-->
+                    <argLine>-server -ea -XX:MaxPermSize=256m -Xmx4g -XX:-UseSplitVerifier @{argLine}</argLine>
+                </configuration>
             </plugin>
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
 <!--                <artifactId>maven-surefire-plugin</artifactId>-->
 <!--                <version>3.0.0-M1</version>-->
 <!--                <configuration>-->
-<!--                    &lt;!&ndash;                    <argLine>-server -ea -XX:MaxPermSize=256m -Xmx4g -XX:-UseSplitVerifier @{argLine}</argLine>&ndash;&gt;-->
+<!--                                        <argLine>-server -ea -XX:MaxPermSize=256m -Xmx4g -XX:-UseSplitVerifier @{argLine}</argLine>-->
 <!--                    <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{argLine}</argLine>-->
 <!--                </configuration>-->
 <!--            </plugin>-->
