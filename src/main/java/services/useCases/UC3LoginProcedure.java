@@ -1,17 +1,16 @@
 package services.useCases;
 
 
-import dataBase.Loaders.ILoader;
-import dataBase.Loaders.SubscriptionLoader;
+import dataBase.Loaders.ISubscriptionLoader;
 import domain.Subscriptions.Subscription;
 
 import java.util.Scanner;
 
 public class UC3LoginProcedure {
 
-    private ILoader userDb;
+    private ISubscriptionLoader userDb;
 
-    public UC3LoginProcedure(ILoader userdb) {
+    public UC3LoginProcedure(ISubscriptionLoader userdb) {
         this.userDb = userdb;
     }
 
@@ -36,3 +35,5 @@ public class UC3LoginProcedure {
         return logedin_user;
     }
 }
+
+

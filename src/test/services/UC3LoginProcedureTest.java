@@ -1,7 +1,7 @@
 package services;
 
 import dataBase.DBInitiator;
-import dataBase.Loaders.ILoader;
+import dataBase.Loaders.ISubscriptionLoader;
 import dataBase.Loaders.SubscriptionLoader;
 import domain.Subscriptions.AssociationMember;
 import org.junit.*;
@@ -16,7 +16,7 @@ import java.io.IOException;
 @RunWith(JUnit4.class)
 public class UC3LoginProcedureTest {
 
-    private ILoader userDB;
+    private ISubscriptionLoader userDB;
     private UC3LoginProcedure uc3LoginProcedure;
 
     @Before

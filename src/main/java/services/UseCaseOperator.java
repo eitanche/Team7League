@@ -7,7 +7,6 @@ import domain.Subscriptions.Subscription;
 import services.useCases.UC1RefereeRegistration;
 import services.useCases.UC2GameScheduler;
 import services.useCases.UC3LoginProcedure;
-import Exceptions.NotAssociationMemberException;
 
 import java.io.IOException;
 import java.util.Scanner;

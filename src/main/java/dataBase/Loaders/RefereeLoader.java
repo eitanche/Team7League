@@ -6,7 +6,7 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
-public class RefereeLoader extends ADatabaseHandler {
+public class RefereeLoader extends ADatabaseHandler implements IRefereeLoader{
     private static RefereeLoader instance=null;
 
     private RefereeLoader() {
@@ -25,7 +25,7 @@ public class RefereeLoader extends ADatabaseHandler {
         desiredReferee = database.getCollection("Referees").find(desiredReferee).first();
         if (desiredReferee==null)
             return null;
-        return new Referee((String)desiredReferee.get("_id") ,SubscriptionLoader.getInstance().getUserNameByID((String) desiredReferee.get("_id")));
+        return new Referee((String)desiredReferee.get("_id") , SubscriptionLoader.getInstance().getUserNameByID((String) desiredReferee.get("_id")));
     }
 
     public ArrayList<Referee> getAllReferees() {
