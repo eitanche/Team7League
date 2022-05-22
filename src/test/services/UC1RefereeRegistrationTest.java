@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class UC1RefereeRegistrationTest {
 
@@ -148,8 +148,18 @@ public class UC1RefereeRegistrationTest {
         Season season = new Season("0", "0", teamsId, refereeId,"regular");
         Referee referee = new Referee("5", "sb");
         uc1RefereeRegistration.assignRefereeToSeason(season, referee, refereeWriterStub);
-        Assert.assertTrue(season.getReferees().contains(referee));
-        Assert.assertTrue(referee.getSeason().contains(season));
+        assertTrue(season.getReferees().contains(referee));
+        assertTrue(referee.getSeason().contains(season));
+    }
+
+    @Test
+    public void isAssociationMemberTrueTest() {
+        assertTrue(uc1RefereeRegistration.isAssociationMember(new AssociationMember("1","yosi")));
+    }
+
+    @Test
+    public void isAssociationMemberFalseTest() {
+        assertFalse(uc1RefereeRegistration.isAssociationMember(new Referee("1","yosi")));
     }
 
 }

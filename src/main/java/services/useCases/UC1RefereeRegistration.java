@@ -41,4 +41,8 @@ public class UC1RefereeRegistration {
         choosedSeason.getReferees().add(choosedReferee);
     }
 
+    public boolean isAssociationMember(Subscription subscription) {
+        return (subscription instanceof AssociationMember);
+    }
+
 }
