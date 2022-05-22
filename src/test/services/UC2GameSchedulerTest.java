@@ -17,9 +17,11 @@ import domain.Subscriptions.Referee;
 import domain.Subscriptions.Subscription;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import Exceptions.InvalidNumberOfTeamsException;
 import Exceptions.NotAssociationMemberException;
+import org.junit.rules.ExpectedException;
 import services.useCases.UC2GameScheduler;
 
 import java.io.IOException;
@@ -37,6 +39,9 @@ public class UC2GameSchedulerTest {
     private boolean leagueSizeFlag;
     private MatchWriter matchWriter;
     private MatchWriterStub matchWriterStub;
+
+    @Rule
+    public final ExpectedException exceptionRule = ExpectedException.none();
 
     @Before
     public void before() throws NotAssociationMemberException, IOException {
@@ -123,12 +128,35 @@ public class UC2GameSchedulerTest {
     }
 
     @Test
+    public void leagueWithoutSeasonsTest() throws InvalidNumberOfTeamsException {
+        exceptionRule.expect(NullPointerException.class);
+        uc2GameSchedulerStub.assignAutoSeasonMatches(leagueLoaderStub.createLeagueWithNoSeason().get(0),matchWriterStub);
+
+    }
+
+    @Test
+    public void leagueWithoutTeamsTest() throws InvalidNumberOfTeamsException {
+        exceptionRule.expect(InvalidNumberOfTeamsException.class);
+        uc2GameSchedulerStub.assignAutoSeasonMatches(leagueLoaderStub.createLeagueWithNoTeams().get(0),matchWriterStub);
+    }
+
+    @Test
     public void checkConditionsTest(){
         leagueSizeFlag = true;
         Assert.assertTrue(uc2GameSchedulerStub.checkConditions(leagueLoaderStub));
         leagueSizeFlag = false;
         Assert.assertFalse(uc2GameSchedulerStub.checkConditions(leagueLoaderStub));
     }
+
+    @Test
+    public void GameSchedulerTest() throws InvalidNumberOfTeamsException {
+        leagueSizeFlag = true;
+        Assert.assertEquals(uc2GameSchedulerStub.GameScheduler(leagueLoaderStub).size(),1);
+        leagueSizeFlag = false;
+        Assert.assertNull(uc2GameSchedulerStub.GameScheduler(leagueLoaderStub));
+    }
+
+
 
     class LeagueLoaderStub implements ILeagueLoader {
 
@@ -152,6 +180,21 @@ public class UC2GameSchedulerTest {
             sid.add("0");
             ArrayList<League> leagues = new ArrayList<>();
             leagues.add(new League("0", "Ligat Ha-al", sid));
+            return leagues;
+        }
+
+        public ArrayList<League> createLeagueWithNoSeason(){
+            ArrayList<String> sid = new ArrayList<String>();
+            ArrayList<League> leagues = new ArrayList<>();
+            leagues.add(new League("0", "Ligat Ha-al", sid));
+            return leagues;
+        }
+
+        public ArrayList<League> createLeagueWithNoTeams(){
+            ArrayList<String> sid = new ArrayList<String>();
+            sid.add("2");
+            ArrayList<League> leagues = new ArrayList<>();
+            leagues.add(new League("2", "Ligat Ha-al", sid));
             return leagues;
         }
     }

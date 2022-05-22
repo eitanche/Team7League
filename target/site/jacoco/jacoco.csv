@@ -1,0 +1,50 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Team7League,domain.LeagueComponents,Season,36,139,7,13,3,28,9,12,2,9
+Team7League,domain.LeagueComponents,Match,15,64,3,7,4,14,4,8,1,6
+Team7League,domain.LeagueComponents,Team,18,45,4,6,1,10,5,5,1,4
+Team7League,domain.LeagueComponents,League,43,89,7,11,7,16,12,6,5,4
+Team7League,domain.Subscriptions,Referee,0,19,0,0,0,6,0,3,0,3
+Team7League,domain.Subscriptions,Player,0,5,0,0,0,2,0,1,0,1
+Team7League,domain.Subscriptions,SystemManager,0,5,0,0,0,2,0,1,0,1
+Team7League,domain.Subscriptions,AssociationMember,0,5,0,0,0,2,0,1,0,1
+Team7League,domain.Subscriptions,Subscription,20,46,3,7,2,10,5,6,2,4
+Team7League,dataBase,DBInitiatorTest,1,186,1,5,0,49,1,17,0,15
+Team7League,dataBase,ADatabaseHandler,0,21,0,0,0,7,0,1,0,1
+Team7League,dataBase,DBInitiator,21,142,3,7,6,37,3,8,0,6
+Team7League,domain.Policies,GamePolicy,36,81,8,8,5,14,6,6,2,2
+Team7League,domain.Policies,Policy,0,3,0,0,0,1,0,1,0,1
+Team7League,Exceptions,LeagueManagementException,0,4,0,0,0,2,0,1,0,1
+Team7League,Exceptions,InvalidNumberOfTeamsException,0,17,0,0,0,2,0,1,0,1
+Team7League,Exceptions,SeasonNotExistsException,0,6,0,0,0,2,0,1,0,1
+Team7League,Exceptions,NotAssociationMemberException,4,0,0,0,2,0,1,0,1,0
+Team7League,dataBase.Loaders,SubscriptionFactory,3,50,0,8,1,9,1,5,1,1
+Team7League,dataBase.Loaders,SubscriptionLoader,0,106,0,8,0,21,0,9,0,5
+Team7League,dataBase.Loaders,SeasonLoaderTest,0,106,0,0,0,15,0,5,0,5
+Team7League,dataBase.Loaders,TeamLoaderTest,0,29,0,0,0,11,0,5,0,5
+Team7League,dataBase.Loaders,SubscriptionFactoryTest,0,79,0,0,0,24,0,6,0,6
+Team7League,dataBase.Loaders,LeagueLoaderTest,0,48,0,0,0,10,0,4,0,4
+Team7League,dataBase.Loaders,RefereeLoaderTest,0,123,0,0,0,16,0,6,0,6
+Team7League,dataBase.Loaders,RefereeLoader,0,87,0,6,0,15,0,7,0,4
+Team7League,dataBase.Loaders,SeasonLoader,0,57,0,4,0,10,0,5,0,3
+Team7League,dataBase.Loaders,SubscriptionLoaderTest,0,64,0,0,0,24,0,10,0,10
+Team7League,dataBase.Loaders,LeagueLoader,0,53,0,4,0,9,0,5,0,3
+Team7League,dataBase.Loaders,TeamLoader,0,45,0,4,0,10,0,5,0,3
+Team7League,services,UC3LoginProcedureTest.SubscriptionLoaderStub,2,24,0,2,1,6,1,4,1,3
+Team7League,services,UC3LoginProcedureTest,0,98,0,0,0,25,0,8,0,8
+Team7League,services,UC2GameSchedulerTest.LeagueLoaderStub,6,84,0,2,1,19,1,6,1,5
+Team7League,services,UC1RefereeRegistrationTest.new ILeagueLoader() {...},0,46,0,0,0,9,0,2,0,2
+Team7League,services,UC1RefereeRegistrationTest.new ILeagueLoader() {...},0,10,0,0,0,2,0,2,0,2
+Team7League,services,UC1RefereeRegistrationTest.new IRefereeLoader() {...},0,28,0,0,0,5,0,2,0,2
+Team7League,services,UC1RefereeRegistrationTest.new IRefereeLoader() {...},0,10,0,0,0,2,0,2,0,2
+Team7League,services,UC1RefereeRegistrationTest.new IRefereeWriter() {...},0,7,0,0,0,2,0,2,0,2
+Team7League,services,UC2GameSchedulerTest,24,394,0,0,4,61,0,11,0,11
+Team7League,services,UC1RefereeRegistrationTest,18,306,0,4,6,56,0,13,0,11
+Team7League,services,UC2GameSchedulerTest.SubscriptionLoaderStub,8,12,0,0,2,3,2,2,2,2
+Team7League,services,UC2GameSchedulerTest.MatchWriterStub,1,6,0,0,1,1,1,1,1,1
+Team7League,dataBase.Writers,MatchWriter,0,62,0,4,0,14,0,5,0,3
+Team7League,dataBase.Writers,MatchWriterTest,2,159,1,9,1,35,1,9,0,5
+Team7League,dataBase.Writers,RefereeWriterTest,5,130,0,0,2,20,0,6,0,6
+Team7League,dataBase.Writers,RefereeWriter,0,57,1,3,0,15,1,4,0,3
+Team7League,services.useCases,UC2GameScheduler,13,50,2,6,4,18,3,7,1,5
+Team7League,services.useCases,UC1RefereeRegistration,0,61,3,9,0,18,3,9,0,6
+Team7League,services.useCases,UC3LoginProcedure,0,29,0,2,0,10,0,4,0,3
