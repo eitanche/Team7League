@@ -14,15 +14,15 @@ public class UC3LoginProcedure {
         this.userDb = userdb;
     }
 
-    public Subscription connect() {
-        Scanner inpu = new Scanner(System.in);
-        String input;
-        System.out.println("Please Enter User-Name:\n");
-        input = inpu.nextLine();
-        String userName = input;
-        System.out.println("Please Enter Password:\n");
-        input = inpu.nextLine();
-        String password = input;
+    public Subscription connect(String userName, String password) {
+//        Scanner inpu = new Scanner(System.in);
+//        String input;
+//        System.out.println("Please Enter User-Name:\n");
+//        input = inpu.nextLine();
+//        String userName = input;
+//        System.out.println("Please Enter Password:\n");
+//        input = inpu.nextLine();
+//        String password = input;
         return activeConnect(userName, password);
     }
     public Subscription activeConnect(String userName, String password){

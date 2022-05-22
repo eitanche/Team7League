@@ -13,6 +13,7 @@ public class SubscriptionLoader extends ADatabaseHandler implements ISubscriptio
         super();
     }
 
+
     public static SubscriptionLoader getInstance() {
         if (instance==null)
             instance = new SubscriptionLoader();
