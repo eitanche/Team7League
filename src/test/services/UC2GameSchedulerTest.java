@@ -1,11 +1,16 @@
 package services;
 
+import com.beust.ah.A;
 import dataBase.DBInitiator;
 import dataBase.Loaders.LeagueLoader;
 import dataBase.Loaders.SubscriptionLoader;
 import domain.LeagueComponents.League;
 import domain.LeagueComponents.Match;
+import domain.LeagueComponents.Season;
+import domain.LeagueComponents.Team;
 import domain.Subscriptions.AssociationMember;
+import domain.Subscriptions.Referee;
+import domain.Subscriptions.Subscription;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +28,8 @@ public class UC2GameSchedulerTest {
 
     @Before
     public void before() throws NotAssociationMemberException, IOException {
+//        SubscriptionLoaderStub amStab = new SubscriptionLoaderStub();
+
         AssociationMember am = (AssociationMember) SubscriptionLoader.getInstance().authenticate("dm","11");
         uc2GameScheduler = new UC2GameScheduler(am);
         DBInitiator.initiateDB();
@@ -70,4 +77,7 @@ public class UC2GameSchedulerTest {
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
         Assert.assertEquals(2, leagues.size());
     }
+
 }
+
+

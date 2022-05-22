@@ -22,16 +22,18 @@ public class UC2GameScheduler {
         am = (AssociationMember) loggedInUser;
     }
 
-    public void GameScheduler() throws InvalidNumberOfTeamsException {
+    public ArrayList<League> GameScheduler() throws InvalidNumberOfTeamsException {
         if (!checkConditions())
-            return;
-        League choosedLeague = chooseLeagueToAssignAutoSeasonMatches();
+            return null;
+        return chooseLeagueToAssignAutoSeasonMatches();
+    }
+
+    public void GameSchedulerSetScheduler(League choosedLeague) throws InvalidNumberOfTeamsException {
         assignAutoSeasonMatches(choosedLeague);
     }
 
     public boolean checkConditions() {
         if(LeagueLoader.getInstance().getLeagues().isEmpty()) {
-            System.out.println("There Are No Leagues In The System");
             return false;
         }
         return true;
@@ -41,23 +43,16 @@ public class UC2GameScheduler {
 
         Season season = choosedLeague.getCurrentSeason();
         ArrayList<Match> matches = season.getGamePolicy().active();
-        printMatches(matches);
+//        printMatches(matches);
         season.setMatches(matches); // write in db and in the attribute class
     }
 
-    public League chooseLeagueToAssignAutoSeasonMatches() {
+    public ArrayList<League> chooseLeagueToAssignAutoSeasonMatches() {
 
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
         if (leagues == null)
             throw new NullPointerException();
-
-        System.out.println("Please Choose League");
-        for (int i = 0; i <  leagues.size(); i++) {
-            System.out.println((i+1) + ". " + leagues.get(i));
-        }
-        Scanner scanner = new Scanner(System.in);
-        int inputLeague = scanner.nextInt();
-        return leagues.get(inputLeague - 1);
+        return leagues;
     }
 
 
