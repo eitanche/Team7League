@@ -2,6 +2,7 @@ package domain.LeagueComponents;
 
 import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.TeamLoader;
+import dataBase.Writers.IMatchWriter;
 import dataBase.Writers.MatchWriter;
 import domain.Policies.GamePolicy;
 import domain.Subscriptions.Referee;
@@ -59,9 +60,8 @@ public class Season {
         return referees;
     }
 
-    public void setMatches(ArrayList m){
+    public void setMatches(ArrayList m, IMatchWriter matchWriter){
         matches = m;
-        //send to eitan matchs...
         MatchWriter.getInstance().registerMatches(matches);
     }
 

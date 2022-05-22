@@ -7,7 +7,7 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
-public class MatchWriter extends ADatabaseHandler {
+public class MatchWriter extends ADatabaseHandler implements IMatchWriter {
     private static MatchWriter instance=null;
 
     private MatchWriter() {
