@@ -6,12 +6,13 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
-public class SubscriptionLoader extends ADatabaseHandler implements ILoader {
+public class SubscriptionLoader extends ADatabaseHandler implements ISubscriptionLoader {
     private static SubscriptionLoader instance=null;
 
     private SubscriptionLoader() {
         super();
     }
+
 
     public static SubscriptionLoader getInstance() {
         if (instance==null)

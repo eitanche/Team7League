@@ -9,7 +9,7 @@ import org.bson.Document;
 
 import java.util.List;
 
-public class RefereeWriter extends ADatabaseHandler {
+public class RefereeWriter extends ADatabaseHandler implements IRefereeWriter {
     private static RefereeWriter instance=null;
 
     private RefereeWriter() {

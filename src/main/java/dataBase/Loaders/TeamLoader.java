@@ -4,7 +4,7 @@ import dataBase.ADatabaseHandler;
 import domain.LeagueComponents.Team;
 import org.bson.Document;
 
-public class TeamLoader extends ADatabaseHandler {
+public class TeamLoader extends ADatabaseHandler implements ITeamLoader{
     private static TeamLoader instance=null;
 
     private TeamLoader() {
