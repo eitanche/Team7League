@@ -50,7 +50,7 @@
                 <version>3.12.0</version>
                 <configuration>
 <!--                    <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{argLine}</argLine>-->
-                    <argLine>-server -ea -XX:MaxPermSize=256m -Xmx4g -XX:-UseSplitVerifier @{argLine}</argLine>
+<!--                    <argLine>-server -ea -XX:MaxPermSize=256m -Xmx4g -XX:-UseSplitVerifier @{argLine}</argLine>-->
                 </configuration>
             </plugin>
 <!--            <plugin>-->
