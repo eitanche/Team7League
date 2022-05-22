@@ -11,6 +11,7 @@ import org.junit.runners.JUnit4;
 import Exceptions.NotAssociationMemberException;
 import services.useCases.UC3LoginProcedure;
 
+
 import java.io.IOException;
 
 
@@ -18,19 +19,27 @@ import java.io.IOException;
 public class UC3LoginProcedureTest {
 
     private ISubscriptionLoader userDB;
+    private ISubscriptionLoader userDBIntegrationTest;
     private UC3LoginProcedure uc3LoginProcedure;
-    protected Boolean subscriptionFlag = true;
+    private UC3LoginProcedure uc3LoginProcedureIntegraion;
+    private SubscriptionLoaderStub subscriptionstub;
+    protected boolean subscriptionFlag;
+
 
     @Before
     public void before() throws NotAssociationMemberException, IOException {
-        SubscriptionLoaderStub subscriptionstub = new SubscriptionLoaderStub();
+        subscriptionstub = new SubscriptionLoaderStub();
         userDB = subscriptionstub.getInstance();
         uc3LoginProcedure = new UC3LoginProcedure(userDB);
-//        DBInitiator.initiateDB();
+        //integration
+        userDBIntegrationTest = SubscriptionLoader.getInstance();
+        uc3LoginProcedureIntegraion = new UC3LoginProcedure(userDBIntegrationTest);
+        DBInitiator.initiateDB();
     }
 
     @Test
     public void activeConnectTest() {//check user not exist or cant load correct from DB.
+        subscriptionFlag = true;
         AssociationMember am = new AssociationMember("10","Deni Markovic");
         Assert.assertEquals(uc3LoginProcedure.connect("dm", "11"), am);
     }
@@ -41,10 +50,36 @@ public class UC3LoginProcedureTest {
         Assert.assertNull((uc3LoginProcedure.connect("dm","12")));
     }
 
+    @Test
+    public void userNameIncorrectTest(){
+        subscriptionFlag = false;
+        Assert.assertNull((uc3LoginProcedure.connect("dm","12")));
+    }
 
-    class SubscriptionLoaderStub implements ISubscriptionLoader{
+    @Test
+    public void activeConnectIntegration(){
+        AssociationMember am = new AssociationMember("10","Deni Markovic");
+        Assert.assertEquals(uc3LoginProcedureIntegraion.connect("dm", "11"), am);
+    }
 
-        public SubscriptionLoaderStub() {}
+    @Test
+    public void PasswordIncorrectTestIntegration() {//if connect send we false the test good.
+        Assert.assertNull((uc3LoginProcedureIntegraion.activeConnect("dm","12")));
+    }
+
+    @Test
+    public void userNameIncorrectTestIntegration(){
+        Assert.assertNull(uc3LoginProcedureIntegraion.connect("d2234522m", "11"));
+    }
+
+    class SubscriptionLoaderStub implements ISubscriptionLoader {
+
+
+
+        public SubscriptionLoaderStub() {
+//            subscriptionFlag = true;
+        }
+
 
         public SubscriptionLoaderStub getInstance() {
 
