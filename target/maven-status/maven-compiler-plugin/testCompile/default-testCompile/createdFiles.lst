@@ -1,0 +1,12 @@
+dataBase\Writers\MatchWriterTest.class
+dataBase\Loaders\LeagueLoaderTest.class
+dataBase\Loaders\SeasonLoaderTest.class
+services\UC2GameSchedulerTest.class
+dataBase\Writers\RefereeWriterTest.class
+dataBase\Loaders\SubscriptionLoaderTest.class
+dataBase\Loaders\RefereeLoaderTest.class
+dataBase\DBInitiatorTest.class
+services\UC3LoginProcedureTest.class
+dataBase\Loaders\SubscriptionFactoryTest.class
+services\UC1RefereeRegistrationTest.class
+dataBase\Loaders\TeamLoaderTest.class

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7cd4b965-5ef9-4644-8992-a0bbde175b5b" name="Default Changelist" comment="testsss" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="JacocoBra" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="291K37Fxplr4kCrU00Or476nVTJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/שולחן העבודה/לימודים/שנה ג/סמסטר ו/סדנת הכנה לפרוייקט/מימוש של ארנון/src" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.10917032" />
+    <property name="project.structure.side.proportion" value="0.20546319" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean build site" />
+      <command value="mvn clean install site" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.UseCaseOperator">
+    <configuration name="UseCaseOperator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="services.UseCaseOperator" />
+      <module name="Team7League" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.useCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Team7League" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team7League" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UC2GameSchedulerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team7League" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UC2GameSchedulerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UseCaseOperator" />
+        <item itemvalue="JUnit.UC2GameSchedulerTest" />
+        <item itemvalue="JUnit.All in Team7League" />
+        <item itemvalue="JUnit.UC2GameSchedulerTest" />
+        <item itemvalue="JUnit.All in Team7League" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7cd4b965-5ef9-4644-8992-a0bbde175b5b" name="Default Changelist" comment="" />
+      <created>1652274951131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652274951131</updated>
+      <workItem from="1652274952337" duration="2731000" />
+      <workItem from="1652277714227" duration="5651000" />
+      <workItem from="1652285257887" duration="7224000" />
+      <workItem from="1652437804443" duration="15339000" />
+      <workItem from="1652526669527" duration="13203000" />
+      <workItem from="1653226349574" duration="5239000" />
+      <workItem from="1653248585268" duration="174000" />
+    </task>
+    <task id="LOCAL-00001" summary="firstPush">
+      <created>1652279866924</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652279866924</updated>
+    </task>
+    <task id="LOCAL-00002" summary="firstPush">
+      <created>1652283917858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652283917858</updated>
+    </task>
+    <task id="LOCAL-00003" summary="firstPush">
+      <created>1652285157198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652285157198</updated>
+    </task>
+    <task id="LOCAL-00004" summary="firstPush">
+      <created>1652286896339</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652286896339</updated>
+    </task>
+    <task id="LOCAL-00005" summary="firstPush">
+      <created>1652288102703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652288102703</updated>
+    </task>
+    <task id="LOCAL-00006" summary="TBH-Push">
+      <created>1652292511639</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652292511639</updated>
+    </task>
+    <task id="LOCAL-00007" summary="TBH-Push">
+      <created>1652438821364</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652438821365</updated>
+    </task>
+    <task id="LOCAL-00008" summary="TBH-Push2">
+      <created>1652439540086</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652439540086</updated>
+    </task>
+    <task id="LOCAL-00009" summary="TBH-Push3">
+      <created>1652445519333</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652445519333</updated>
+    </task>
+    <task id="LOCAL-00010" summary="finish uc1">
+      <created>1652445876846</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652445876846</updated>
+    </task>
+    <task id="LOCAL-00011" summary="finish uc1 .2">
+      <created>1652446073800</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652446073800</updated>
+    </task>
+    <task id="LOCAL-00012" summary="finish uc2">
+      <created>1652447479670</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652447479670</updated>
+    </task>
+    <task id="LOCAL-00013" summary="finish uc2">
+      <created>1652447613939</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652447613939</updated>
+    </task>
+    <task id="LOCAL-00014" summary="finish uc2">
+      <created>1652450181488</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652450181488</updated>
+    </task>
+    <task id="LOCAL-00015" summary="testsss">
+      <created>1652538593539</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652538593539</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="firstPush" />
+    <MESSAGE value="TBH-Push" />
+    <MESSAGE value="TBH-Push2" />
+    <MESSAGE value="TBH-Push3" />
+    <MESSAGE value="finish uc1" />
+    <MESSAGE value="finish uc1 .2" />
+    <MESSAGE value="finish uc2" />
+    <MESSAGE value="testsss" />
+    <option name="LAST_COMMIT_MESSAGE" value="testsss" />
+  </component>
+</project>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: dataBase.Writers.MatchWriterTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s - in dataBase.Writers.MatchWriterTest
