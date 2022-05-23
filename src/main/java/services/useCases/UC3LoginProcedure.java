@@ -1,29 +1,28 @@
 package services.useCases;
 
 
-import dataBase.Loaders.ILoader;
-import dataBase.Loaders.SubscriptionLoader;
+import dataBase.Loaders.ISubscriptionLoader;
 import domain.Subscriptions.Subscription;
 
 import java.util.Scanner;
 
 public class UC3LoginProcedure {
 
-    private ILoader userDb;
+    private ISubscriptionLoader userDb;
 
-    public UC3LoginProcedure(ILoader userdb) {
+    public UC3LoginProcedure(ISubscriptionLoader userdb) {
         this.userDb = userdb;
     }
 
-    public Subscription connect() {
-        Scanner inpu = new Scanner(System.in);
-        String input;
-        System.out.println("Please Enter User-Name:\n");
-        input = inpu.nextLine();
-        String userName = input;
-        System.out.println("Please Enter Password:\n");
-        input = inpu.nextLine();
-        String password = input;
+    public Subscription connect(String userName, String password) {
+//        Scanner inpu = new Scanner(System.in);
+//        String input;
+//        System.out.println("Please Enter User-Name:\n");
+//        input = inpu.nextLine();
+//        String userName = input;
+//        System.out.println("Please Enter Password:\n");
+//        input = inpu.nextLine();
+//        String password = input;
         return activeConnect(userName, password);
     }
     public Subscription activeConnect(String userName, String password){
@@ -36,3 +35,5 @@ public class UC3LoginProcedure {
         return logedin_user;
     }
 }
+
+

@@ -6,7 +6,7 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
-public class LeagueLoader extends ADatabaseHandler {
+public class LeagueLoader extends ADatabaseHandler implements ILeagueLoader {
     private static LeagueLoader instance=null;
 
     private LeagueLoader() {

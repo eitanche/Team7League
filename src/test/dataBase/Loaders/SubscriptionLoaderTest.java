@@ -3,7 +3,6 @@ package dataBase.Loaders;
 import dataBase.DBInitiator;
 import domain.Subscriptions.Referee;
 import domain.Subscriptions.Subscription;
-import org.bson.Document;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

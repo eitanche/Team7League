@@ -2,6 +2,7 @@ package domain.LeagueComponents;
 
 import dataBase.Loaders.RefereeLoader;
 import dataBase.Loaders.TeamLoader;
+import dataBase.Writers.IMatchWriter;
 import dataBase.Writers.MatchWriter;
 import domain.Policies.GamePolicy;
 import domain.Subscriptions.Referee;
@@ -59,9 +60,8 @@ public class Season {
         return referees;
     }
 
-    public void setMatches(ArrayList m){
+    public void setMatches(ArrayList m, IMatchWriter matchWriter){
         matches = m;
-        //send to eitan matchs...
         MatchWriter.getInstance().registerMatches(matches);
     }
 
@@ -75,13 +75,13 @@ public class Season {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Season)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Season season = (Season) o;
-        return Objects.equals(name, season.name);
+        return id.equals(season.id) && name.equals(season.name) && teams.equals(season.teams)  && matches.equals(season.matches);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id, name, teams, referees, matches);
     }
 }

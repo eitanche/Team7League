@@ -1,5 +1,7 @@
 package domain.Subscriptions;
 
+import java.util.Objects;
+
 public abstract class Subscription {
     protected String id;
     protected String name;
@@ -25,7 +27,15 @@ public abstract class Subscription {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return ((Subscription)obj).id.equals(this.id) && ((Subscription)obj).name.equals(this.name) && this.getClass().isInstance(obj) ;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Subscription that = (Subscription) o;
+        return id.equals(that.id) && name.equals(that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }
