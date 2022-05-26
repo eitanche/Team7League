@@ -2,6 +2,11 @@ package domain.Subscriptions;
 
 import java.util.Objects;
 
+/**
+ * This abstract class represents a subscription of the system, each subscription have this class attributes and
+ * capabilities.
+ */
+
 public abstract class Subscription {
     protected String id;
     protected String name;
@@ -26,6 +31,10 @@ public abstract class Subscription {
                 '}';
     }
 
+    /**
+     * @param o
+     * @return true if that's the same object or his class members equals else false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

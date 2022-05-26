@@ -8,6 +8,11 @@ import Exceptions.InvalidNumberOfTeamsException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * this class is a game policy.
+ * A season object must contain game policy for proper conduct.
+ */
+
 public class GamePolicy extends Policy {
 
     private Season season;
@@ -19,6 +24,11 @@ public class GamePolicy extends Policy {
         this.season = season;
     }
 
+    /**
+     * checks if there is exactly 10 teams in the season and create matches.
+     * @return list of matches between the teams.
+     * @throws InvalidNumberOfTeamsException
+     */
     public ArrayList<Match> active() throws InvalidNumberOfTeamsException {
         this.matches = new ArrayList<>();
         ArrayList<Team> teams1 = this.season.getTeams();
@@ -35,7 +45,10 @@ public class GamePolicy extends Policy {
         }
         return matches;
     }
-
+    /**
+     * @param o
+     * @return true if that's the same object or his class members equals else false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

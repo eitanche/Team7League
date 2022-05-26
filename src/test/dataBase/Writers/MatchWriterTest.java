@@ -24,6 +24,11 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
+
+/**
+ * this class tests the MatchWriter class.
+ */
+
 public class MatchWriterTest {
     private static MatchWriter writer = MatchWriter.getInstance();
     @Rule
@@ -34,6 +39,9 @@ public class MatchWriterTest {
         DBInitiator.initiateDB();
     }
 
+    /**
+     * Checks if the DB insert matches correctly.
+     */
     @Test
     public void registerMatches() {
         ArrayList<Match> matches = new ArrayList<>();
@@ -54,6 +62,11 @@ public class MatchWriterTest {
         assertTrue(DBContainsAllMatches(matches));
     }
 
+    /**
+     * check if the DB has write all the matches to the db.
+     * @param matches list of matches
+     * @return boolean value
+     */
     private boolean DBContainsAllMatches(ArrayList<Match> matches) {
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");

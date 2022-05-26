@@ -12,14 +12,25 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+
+/**
+ * this class tests the RefereeLoader class.
+ */
 public class RefereeLoaderTest {
     private static RefereeLoader loader = RefereeLoader.getInstance();
 
+    /**
+     * initiate DB.
+     * @throws IOException
+     */
     @BeforeClass
     public static void initiateEmptyDB() throws IOException {
         DBInitiator.initiateDB();
     }
 
+    /**
+     * checks if the specific referee loads correctly.
+     */
     @Test
     public void getReferee_validReferee() {
         Referee actualReferee = loader.getReferee("2");
@@ -27,12 +38,20 @@ public class RefereeLoaderTest {
         assertEquals(expectedReferee, actualReferee);
     }
 
+    /**
+     * checks if there is no such a referee in the DB if returns null.
+     * one object test.
+     */
     @Test
     public void getReferee_invalidReferee() {
         Referee actualReferee = loader.getReferee("222");
         assertNull(actualReferee);
     }
 
+    /**
+     * checks if all the referees loads correctly.
+     * all objects test.
+     */
     @Test
     public void getAllReferees() {
         ArrayList<Referee> expectedReferees = new ArrayList<Referee>(

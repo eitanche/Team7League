@@ -2,6 +2,12 @@ package domain.LeagueComponents;
 
 import java.util.Objects;
 
+
+/**
+ * This class represents Match component
+ */
+
+
 public class Match {
 
     private Team home;
@@ -40,6 +46,10 @@ public class Match {
                 ", season="+ season.toString() +"}";
     }
 
+    /**
+     * @param o
+     * @return true if that's the same object or his class members equals else false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
