@@ -5,84 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd4b965-5ef9-4644-8992-a0bbde175b5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/ADatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/ADatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/DBInitiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/DBInitiator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ILeagueLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ILeagueLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/IRefereeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/IRefereeLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ISeasonLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ISeasonLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ISubscriptionLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ISubscriptionLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ITeamLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/ITeamLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/LeagueLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/LeagueLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/RefereeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/RefereeLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/SeasonLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/SeasonLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/SubscriptionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/SubscriptionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/SubscriptionLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/SubscriptionLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/TeamLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Loaders/TeamLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Writers/IMatchWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Writers/IMatchWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Writers/IRefereeWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Writers/IRefereeWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Writers/MatchWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Writers/MatchWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase/Writers/RefereeWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase/Writers/RefereeWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/dataBase/DBInitiatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/dataBase/DBInitiatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Team7League-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Team7League-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Leagues.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Leagues.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/ILoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/LeagueLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Loaders/LeagueLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/RefereeLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Loaders/RefereeLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/SeasonLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Loaders/SeasonLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/SubscriptionLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Loaders/SubscriptionLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/SubscriptionLoaderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Loaders/SubscriptionLoaderTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Loaders/TeamLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Loaders/TeamLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Writers/MatchWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Writers/MatchWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBase/Writers/RefereeWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataBase/Writers/RefereeWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/LeagueComponents/Season.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/LeagueComponents/Season.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Subscriptions/Subscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Subscriptions/Subscription.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/UC1RefereeRegistrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UC1RefereeRegistrationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/UC2GameSchedulerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UC2GameSchedulerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/UC3LoginProcedureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UC3LoginProcedureTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/UseCaseOperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/useCases/UC1RefereeRegistration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/useCases/UC1RefereeRegistration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/useCases/UC2GameScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/useCases/UC2GameScheduler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/useCases/UC3LoginProcedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/useCases/UC3LoginProcedure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/dependencies.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/dependencies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/dependency-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/dependency-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/services/UseCaseOperator.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/plugin-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/plugin-management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/plugins.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/plugins.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/project-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/project-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.DBInitiatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.DBInitiatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.LeagueLoaderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.LeagueLoaderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.RefereeLoaderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.RefereeLoaderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.SeasonLoaderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.SeasonLoaderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.SubscriptionFactoryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.SubscriptionFactoryTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.SubscriptionLoaderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.SubscriptionLoaderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.TeamLoaderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Loaders.TeamLoaderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Writers.MatchWriterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Writers.MatchWriterTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Writers.RefereeWriterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataBase.Writers.RefereeWriterTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-services.UC1RefereeRegistrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-services.UC1RefereeRegistrationTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-services.UC2GameSchedulerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-services.UC2GameSchedulerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-services.UC3LoginProcedureTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-services.UC3LoginProcedureTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.DBInitiatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.DBInitiatorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.LeagueLoaderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.LeagueLoaderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.RefereeLoaderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.RefereeLoaderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.SeasonLoaderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.SeasonLoaderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.SubscriptionFactoryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.SubscriptionFactoryTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.SubscriptionLoaderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Loaders.SubscriptionLoaderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Writers.MatchWriterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Writers.MatchWriterTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataBase.Writers.RefereeWriterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataBase.Writers.RefereeWriterTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/services.UC1RefereeRegistrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/services.UC1RefereeRegistrationTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/services.UC2GameSchedulerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/services.UC2GameSchedulerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/services.UC3LoginProcedureTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/services.UC3LoginProcedureTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/services/UC3LoginProcedureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/services/UC3LoginProcedureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +110,7 @@
       <workItem from="1653226349574" duration="5239000" />
       <workItem from="1653248585268" duration="174000" />
       <workItem from="1653291521237" duration="1356000" />
-      <workItem from="1653574749597" duration="4130000" />
+      <workItem from="1653574749597" duration="4867000" />
     </task>
     <task id="LOCAL-00001" summary="firstPush">
       <created>1652279866924</created>
@@ -301,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653291718123</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="JavaDoc-tal">
+      <created>1653578946107</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653578946107</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +258,7 @@
     <MESSAGE value="finish uc1 .2" />
     <MESSAGE value="finish uc2" />
     <MESSAGE value="testsss" />
-    <option name="LAST_COMMIT_MESSAGE" value="testsss" />
+    <MESSAGE value="JavaDoc-tal" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc-tal" />
   </component>
 </project>
