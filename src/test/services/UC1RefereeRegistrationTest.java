@@ -25,7 +25,14 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+/**
+ * class for test uc1.
+ * data member:
+ * uc1RefereeRegistration instance of UC1RefereeRegistration
+ * exceptionRule instance of ExpectedException.
+ */
 public class UC1RefereeRegistrationTest {
+
 
     private UC1RefereeRegistration uc1RefereeRegistration;
     @Rule
@@ -36,8 +43,14 @@ public class UC1RefereeRegistrationTest {
         uc1RefereeRegistration = new UC1RefereeRegistration();
     }
 
+    /**
+     * Test Function which check all the leagues in data base.
+     */
     @Test
     public void getAllLeaguesValidTest() {
+        /**
+         * craete new temporary stub league loder.
+         */
         ILeagueLoader leagueLoaderStub = new ILeagueLoader() {
             @Override
             public ArrayList<League> getLeagues() {
@@ -64,9 +77,15 @@ public class UC1RefereeRegistrationTest {
         assertEquals(expectedLeagues, actualLeagues);
     }
 
+    /**
+     * Test Function which check if exception null pointer.
+     */
     @Test
     public void getAllLeaguesNullTest() {
         exceptionRule.expect(NullPointerException.class);
+        /**
+         * Craete new temporary stub league loder.
+         */
         ILeagueLoader emptyLeagueLoaderStub = new ILeagueLoader() {
             @Override
             public ArrayList<League> getLeagues() {
@@ -76,6 +95,9 @@ public class UC1RefereeRegistrationTest {
         uc1RefereeRegistration.getAllLeagues(emptyLeagueLoaderStub);
     }
 
+    /**
+     * Test Function which check all the seasons in data base.
+     */
     @Test
     public void getAllSeasonsOfLeagueValidTest() {
         ArrayList<String> teamIDS = new ArrayList<String>(
@@ -90,6 +112,9 @@ public class UC1RefereeRegistrationTest {
         assertEquals(expectedSeasons, actualSeasons);
     }
 
+    /**
+     * Test Function which check if exception null pointer - league without season.
+     */
     @Test
     public void getAllSeasonsOfLeagueWithoutSeasonsTest() {
         exceptionRule.expect(NullPointerException.class);
@@ -97,6 +122,9 @@ public class UC1RefereeRegistrationTest {
         uc1RefereeRegistration.getAllSeasonsOfLeague(league);
     }
 
+    /**
+     * Test Function which check referees with new stub that add just two referees for the test.
+     */
     @Test
     public void getAllRefereesValidTest() {
         IRefereeLoader refereeLoaderStub = new IRefereeLoader() {
@@ -117,6 +145,9 @@ public class UC1RefereeRegistrationTest {
         assertEquals(expectedReferees, actualReferees);
     }
 
+    /**
+     * Test Function which check if exception null pointer - no referees.
+     */
     @Test
     public void getAllRefereesExceptionTest() {
         exceptionRule.expect(NullPointerException.class);
@@ -129,8 +160,15 @@ public class UC1RefereeRegistrationTest {
         uc1RefereeRegistration.getAllReferees(refereeLoaderStub);
     }
 
+    /**
+     * Test Function which check if assign referee successfully.
+     * @throws SeasonNotExistsException
+     */
     @Test
     public void assignRefereeToSeasonTest() throws SeasonNotExistsException {
+        /**
+         * Create new stub to not use the addRefereeToSeason function.
+         */
         IRefereeWriter refereeWriterStub = new IRefereeWriter() {
             @Override
             public void addRefereeToSeason(Season season, Referee referee) throws SeasonNotExistsException {
@@ -152,11 +190,17 @@ public class UC1RefereeRegistrationTest {
         assertTrue(referee.getSeason().contains(season));
     }
 
+    /**
+     * check if the user try to apply the UC is the Association Member.
+     */
     @Test
     public void isAssociationMemberTrueTest() {
         assertTrue(uc1RefereeRegistration.isAssociationMember(new AssociationMember("1","yosi")));
     }
 
+    /**
+     * check if the user(referee) try to apply the UC is the Association Member.
+     */
     @Test
     public void isAssociationMemberFalseTest() {
         assertFalse(uc1RefereeRegistration.isAssociationMember(new Referee("1","yosi")));

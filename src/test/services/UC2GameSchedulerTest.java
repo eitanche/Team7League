@@ -27,6 +27,11 @@ import services.useCases.UC2GameScheduler;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * class for test uc2.
+ * data member:
+ * Stubs member to test Independent of other class.
+ */
 public class UC2GameSchedulerTest {
 
     private LeagueLoader leagueLoader;
@@ -61,11 +66,13 @@ public class UC2GameSchedulerTest {
         matchWriter = MatchWriter.getInstance();
         DBInitiator.initiateDB();
 
-
-
-
     }
 
+    ///integerstion tests
+    /**
+     * Test function to schedule matches.
+     * @throws InvalidNumberOfTeamsException
+     */
     @Test
     public void assignAutoSeasonMatchesTestIntegration() throws InvalidNumberOfTeamsException { // check correction attribute of Season's matches
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
@@ -87,6 +94,10 @@ public class UC2GameSchedulerTest {
         Assert.assertTrue(matchesOfSeason.containsAll(matchesToCheck));
     }
 
+    /**
+     * Test function which check if the match schedule is accordingly to policy.
+     * @throws InvalidNumberOfTeamsException
+     */
     @Test
     public void checkPolicyIntegration() throws InvalidNumberOfTeamsException { //check gamePolicy, each team have *one match* against other each team
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
@@ -103,6 +114,9 @@ public class UC2GameSchedulerTest {
 
     }
 
+    /**
+     * Test function which check if no leagues.
+     */
     @Test
     public void checkEmptyLeagueIntegration(){
         ArrayList<League> leagues = LeagueLoader.getInstance().getLeagues();
@@ -112,7 +126,10 @@ public class UC2GameSchedulerTest {
 
     ///unit tests
 
-
+    /**
+     * Test function to schedule matches with new stub to independent of other class.
+     * @throws InvalidNumberOfTeamsException
+     */
     @Test
     public void assignAutoSeasonMatchesTest() throws InvalidNumberOfTeamsException {
         leagueSizeFlag = true;
@@ -121,12 +138,19 @@ public class UC2GameSchedulerTest {
         Assert.assertNotNull(league.getCurrentSeason().getMatches());
     }
 
+    /**
+     * Test function to choose league with new stub to independent of other class.
+     */
     @Test
     public void chooseLeagueToAssignAutoSeasonMatchesTest(){
         leagueSizeFlag = true;
         Assert.assertEquals(uc2GameSchedulerStub.chooseLeagueToAssignAutoSeasonMatches(leagueLoaderStub).size(),1);
     }
 
+    /**
+     * Test function which check if catch exception to league without season.
+     * @throws InvalidNumberOfTeamsException
+     */
     @Test
     public void leagueWithoutSeasonsTest() throws InvalidNumberOfTeamsException {
         exceptionRule.expect(NullPointerException.class);
@@ -134,12 +158,19 @@ public class UC2GameSchedulerTest {
 
     }
 
+    /**
+     * Test function which check if catch exception to leagues without teams.
+     * @throws InvalidNumberOfTeamsException
+     */
     @Test
     public void leagueWithoutTeamsTest() throws InvalidNumberOfTeamsException {
         exceptionRule.expect(InvalidNumberOfTeamsException.class);
         uc2GameSchedulerStub.assignAutoSeasonMatches(leagueLoaderStub.createLeagueWithNoTeams().get(0),matchWriterStub);
     }
 
+    /**
+     * Test function which check the condition.
+     */
     @Test
     public void checkConditionsTest(){
         leagueSizeFlag = true;
@@ -148,6 +179,10 @@ public class UC2GameSchedulerTest {
         Assert.assertFalse(uc2GameSchedulerStub.checkConditions(leagueLoaderStub));
     }
 
+    /**
+     * Test function which check if game schedule work with stub - Independent of other class.
+     * @throws InvalidNumberOfTeamsException
+     */
     @Test
     public void GameSchedulerTest() throws InvalidNumberOfTeamsException {
         leagueSizeFlag = true;
@@ -157,7 +192,9 @@ public class UC2GameSchedulerTest {
     }
 
 
-
+/**
+ * leagueLoaderStub class to test Independent of leagueLoader class.
+ */
     class LeagueLoaderStub implements ILeagueLoader {
 
         public LeagueLoaderStub() { }
@@ -166,6 +203,10 @@ public class UC2GameSchedulerTest {
             return new LeagueLoaderStub();
         }
 
+        /**
+         * override to get league function.
+         * @return
+         */
         @Override
         public ArrayList<League> getLeagues() {
             ArrayList<League> league = new ArrayList<>();
@@ -175,6 +216,10 @@ public class UC2GameSchedulerTest {
             return league;
         }
 
+        /**
+         * Create league to our test funtions.
+         * @return list of league objects.
+         */
         public ArrayList<League> createLeague(){
             ArrayList<String> sid = new ArrayList<String>();
             sid.add("0");
@@ -183,13 +228,20 @@ public class UC2GameSchedulerTest {
             return leagues;
         }
 
+        /**
+         * Create league without seasons to check exception in test function.
+         * @return list of leagues objects.
+         */
         public ArrayList<League> createLeagueWithNoSeason(){
             ArrayList<String> sid = new ArrayList<String>();
             ArrayList<League> leagues = new ArrayList<>();
             leagues.add(new League("0", "Ligat Ha-al", sid));
             return leagues;
         }
-
+        /**
+         * Create league without teams to check exception in test function.
+         * @return list of leagues objects.
+         */
         public ArrayList<League> createLeagueWithNoTeams(){
             ArrayList<String> sid = new ArrayList<String>();
             sid.add("2");
@@ -198,7 +250,9 @@ public class UC2GameSchedulerTest {
             return leagues;
         }
     }
-
+/**
+ * MatchWriterStub class to test Independent of MatchWriter class.
+ */
     class MatchWriterStub implements IMatchWriter{
 
         public MatchWriterStub() { }
@@ -208,15 +262,14 @@ public class UC2GameSchedulerTest {
 
         }
     }
-
+/**
+ * SubscriptionLoaderStub class to test Independent of SubscriptionLoader class.
+ */
     class SubscriptionLoaderStub implements ISubscriptionLoader {
-
-
 
         public SubscriptionLoaderStub() {
 //            subscriptionFlag = true;
         }
-
 
         public SubscriptionLoaderStub getInstance() {
 
