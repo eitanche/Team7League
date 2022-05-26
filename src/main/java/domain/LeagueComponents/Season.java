@@ -10,6 +10,10 @@ import domain.Subscriptions.Referee;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * represents season in League component
+ */
+
 public class Season {
 
     private String id;
@@ -60,6 +64,12 @@ public class Season {
         return referees;
     }
 
+
+    /**
+     * this function set matches to this season
+     * @param m matches list
+     * @param matchWriter writer to write into the DB
+     */
     public void setMatches(ArrayList m, IMatchWriter matchWriter){
         matches = m;
         MatchWriter.getInstance().registerMatches(matches);
@@ -72,6 +82,10 @@ public class Season {
                 '}';
     }
 
+    /**
+     * @param o
+     * @return true if that's the same object or his class members equals else false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

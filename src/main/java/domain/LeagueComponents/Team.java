@@ -2,6 +2,10 @@ package domain.LeagueComponents;
 
 import java.util.Objects;
 
+
+/**
+ * this class represents a team
+ */
 public class Team {
     private String id;
     private String name;
@@ -18,6 +22,10 @@ public class Team {
         return "Team name: "+this.name;
     }
 
+    /**
+     * @param o
+     * @return true if that's the same object or his class members equals else false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

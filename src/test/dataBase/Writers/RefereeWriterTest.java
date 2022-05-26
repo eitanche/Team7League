@@ -16,6 +16,10 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+/**
+ * this class tests the RefereeWriter class.
+ */
+
 public class RefereeWriterTest {
     private static RefereeWriter writer = RefereeWriter.getInstance();
     @Rule
@@ -26,6 +30,10 @@ public class RefereeWriterTest {
         DBInitiator.initiateDB();
     }
 
+    /**
+     * check if the DB add referee correctly.
+     * @throws SeasonNotExistsException
+     */
     @Test
     public void addRefereeToSeason_validSeason() throws SeasonNotExistsException {
         Season s = SeasonLoader.getInstance().getSeason("0");
@@ -34,6 +42,10 @@ public class RefereeWriterTest {
         assertTrue(isRefereeInSeasonDB(s,r));
     }
 
+    /**
+     * checks if the DB throws exception if we try to add referee to season that isn't exist
+     * @throws SeasonNotExistsException
+     */
     @Test
     public void addRefereeToSeason_invalidSeason() throws SeasonNotExistsException {
         exceptionRule.expect(SeasonNotExistsException.class);
@@ -46,6 +58,12 @@ public class RefereeWriterTest {
         writer.addRefereeToSeason(s, r);
     }
 
+    /**
+     *
+     * @param season
+     * @param referee
+     * @return boolean value represents if the referee attached to the param season or not.
+     */
     private boolean isRefereeInSeasonDB(Season season, Referee referee) {
         Season newSeasonFromDB = SeasonLoader.getInstance().getSeason(season.getId());
         return newSeasonFromDB.getReferees().contains(referee);

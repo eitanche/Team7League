@@ -12,14 +12,24 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+
+/**
+ * this class tests the SeasonLoader class.
+ */
 public class SeasonLoaderTest {
     private static SeasonLoader loader = SeasonLoader.getInstance();
-
+    /**
+     * initiate DB.
+     * @throws IOException
+     */
     @BeforeClass
     public static void initiateEmptyDB() throws IOException {
         DBInitiator.initiateDB();
     }
 
+    /**
+     * checks if the specific season loads correctly.
+     */
     @Test
     public void getSeason_validSeason() {
         ArrayList<String> teamIDs = new ArrayList<String>(
@@ -30,7 +40,10 @@ public class SeasonLoaderTest {
         Season actualSeason = loader.getSeason("1");
         assertEquals(expectedSeason, actualSeason);
     }
-
+    /**
+     * checks if there is no such a season in the DB if returns null.
+     * one object test.
+     */
     @Test
     public void getSeason_invalidSeason() {
         Season actualSeason = loader.getSeason("1212");

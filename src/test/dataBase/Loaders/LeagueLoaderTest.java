@@ -11,14 +11,25 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+
+/**
+ * this class tests the LeagueLoader class.
+ */
 public class LeagueLoaderTest {
     private static LeagueLoader loader = LeagueLoader.getInstance();
 
+    /**
+     * initiate DB.
+     * @throws IOException
+     */
     @BeforeClass
     public static void initiateEmptyDB() throws IOException {
         DBInitiator.initiateDB();
     }
 
+    /**
+     * checks if the leagues loads correctly.
+     */
     @Test
     public void getLeagues() {
         ArrayList<League> expectedLeagues = new ArrayList<League>(

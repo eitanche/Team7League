@@ -5,6 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * this class tests the SubscriptionFactory class.
+ * It have to create the correct instances.
+ */
+
 public class SubscriptionFactoryTest {
 
     @Test

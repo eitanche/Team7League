@@ -5,6 +5,11 @@ import dataBase.Loaders.SeasonLoader;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * This class represents League component
+ */
+
+
 public class League {
 
     private String id;
@@ -28,6 +33,10 @@ public class League {
         return name;
     }
 
+    /**
+     *
+     * @param seasons set league seasons
+     */
     public void setSeasons(ArrayList<Season> seasons) {
         this.seasons = seasons;
     }
@@ -49,6 +58,10 @@ public class League {
         return this.name;
     }
 
+    /**
+     * @param o
+     * @return true if that's the same object or his class members equals else false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
