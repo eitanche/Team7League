@@ -23,6 +23,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * class for initiate the mongoDataBase from local
+ */
 public class DBInitiator {
     private final String pathToResources = "src/main/resources";
     private MongoDatabase database;
@@ -36,12 +39,20 @@ public class DBInitiator {
         database.drop();
     }
 
+    /**
+     * adding JSON files to DB
+     */
     public void addAllJsonsToDB() throws IOException {
          for (String jsonFileName: listFilesUsingJavaIO(pathToResources)) {
              loadDBFromJsonFile(jsonFileName);
          }
     }
 
+    /**
+     * collect all files from project's resources into set
+     * @param dir - path to resources
+     * @return - Set of file names
+     */
     public Set<String> listFilesUsingJavaIO(String dir) {
         return Stream.of(new File(dir).listFiles())
                 .filter(file -> !file.isDirectory())
@@ -49,6 +60,10 @@ public class DBInitiator {
                 .collect(Collectors.toSet());
     }
 
+    /**
+     * insert jsonFile to the DB
+     * @param jsonFileName - the name of the json file
+     */
     public void loadDBFromJsonFile(String jsonFileName) throws IOException {
         String collectionName = jsonFileName.substring(0, jsonFileName.indexOf('.'));
         MongoCollection<Document> collection = database.getCollection(collectionName);
@@ -86,6 +101,9 @@ public class DBInitiator {
         }
     }
 
+    /**
+     * initiating the DB with all the json files in the resources
+     */
     public static void initiateDB() throws IOException {
         DBInitiator db = new DBInitiator();
         db.addAllJsonsToDB();

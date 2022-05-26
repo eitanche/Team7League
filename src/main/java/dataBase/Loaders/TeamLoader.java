@@ -4,6 +4,10 @@ import dataBase.ADatabaseHandler;
 import domain.LeagueComponents.Team;
 import org.bson.Document;
 
+
+/**
+ * Singelton class for load leagues from DB
+ */
 public class TeamLoader extends ADatabaseHandler implements ITeamLoader{
     private static TeamLoader instance=null;
 
@@ -16,7 +20,11 @@ public class TeamLoader extends ADatabaseHandler implements ITeamLoader{
             instance = new TeamLoader();
         return instance;
     }
-
+    /**
+     * load team from DB with teamID
+     * @param teamID - id of desired team
+     * @return team object
+     */
     public Team getTeam(String teamID) {
         Document desiredTeam = new Document();
         desiredTeam.put("_id", teamID);

@@ -8,6 +8,9 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import org.slf4j.LoggerFactory;
 
+/**
+ * abstract class for handling with the DB
+ */
 public abstract class ADatabaseHandler {
     protected MongoDatabase database;
 

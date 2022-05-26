@@ -6,6 +6,9 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
+/**
+ * Singelton class for load leagues from DB
+ */
 public class LeagueLoader extends ADatabaseHandler implements ILeagueLoader {
     private static LeagueLoader instance=null;
 
@@ -18,6 +21,11 @@ public class LeagueLoader extends ADatabaseHandler implements ILeagueLoader {
             instance = new LeagueLoader();
         return instance;
     }
+
+    /**
+     * collect all leagues from DB into ArrayList
+     * @return ArrayList<League> of Leagues
+     */
 
     public ArrayList<League> getLeagues() {
         ArrayList<League> allLeagues = new ArrayList<>();

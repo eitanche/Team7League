@@ -7,6 +7,9 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
+/**
+ * Singelton class for write Matches to DB
+ */
 public class MatchWriter extends ADatabaseHandler implements IMatchWriter {
     private static MatchWriter instance=null;
 
@@ -20,6 +23,10 @@ public class MatchWriter extends ADatabaseHandler implements IMatchWriter {
         return instance;
     }
 
+    /**
+     * write to DB matches from ArrayList
+     * @param matches - ArrayList of matches to write into the DB
+     */
     public void registerMatches(ArrayList<Match> matches) {
         MongoCollection<Document> matchCollection = database.getCollection("Matches");
         for(Match match: matches) {

@@ -6,6 +6,9 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 
+/**
+ * Singelton class for load referees from DB
+ */
 public class RefereeLoader extends ADatabaseHandler implements IRefereeLoader{
     private static RefereeLoader instance=null;
 
@@ -19,6 +22,11 @@ public class RefereeLoader extends ADatabaseHandler implements IRefereeLoader{
         return instance;
     }
 
+    /**
+     * load referee from DB
+     * @param refereeID - id of desired referee
+     * @return Referee object
+     */
     public Referee getReferee(String refereeID) {
         Document desiredReferee = new Document();
         desiredReferee.put("_id", refereeID);
@@ -28,6 +36,10 @@ public class RefereeLoader extends ADatabaseHandler implements IRefereeLoader{
         return new Referee((String)desiredReferee.get("_id") , SubscriptionLoader.getInstance().getUserNameByID((String) desiredReferee.get("_id")));
     }
 
+    /**
+     * collect all referee from DB into ArrayList
+     * @return ArrayList<referee> of Referees
+     */
     public ArrayList<Referee> getAllReferees() {
         ArrayList<Referee> allReferees = new ArrayList<>();
         for (Document refereeDoc: database.getCollection("Referees").find(new Document())) {
